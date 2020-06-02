@@ -1,12 +1,30 @@
-# Module 4 - Security
-# Lab 10: Managing Azure AD authentication and authorization
+---
+lab:
+    title: 'Lab: Managing Azure AD authentication and authorization'
+    module: 'Module 5: Security'
+---
 
-### Scenario
+# Lab: Managing Azure AD authentication and authorization
+# Student lab manual
 
-Adatum Corporation wants to test integration of its Active Directory Domain Services (AD DS) forest with its Azure Active Directory (Azure AD) tenant.
-  
+## Lab scenario
 
-### Objectives
+As part of its migration to Azure, Adatum Corporation needs to define its identity strategy. Adatum has a single domain Active Directory forest named adatum.com and owns the corresponding, publicly registered DNS domain. As the Adatum Enterprise Architecture team is exploring the option of transitioning some of the on-premises workloads to Azure, it intends to evaluate integration between its Active Directory Domain Services (AD DS) environment and the Azure Active Directory (Azure AD) tenant associated with the target Azure subscription as the core component of its longer-term authentication and authorization model.
+
+The new model should facilitate single sign-on, along with per-application step-up authentication that leverages multi-factor authentication capabilities of Azure AD. To implement single sign-on, the Architecture team plans to deploy Azure AD Connect and configure it for password hash synchronization, resulting in matching user objects in both identity stores. Choosing the optimal authentication method is the first concern for organizations wanting to move to the cloud. Azure AD password hash synchronization is the simplest way to implement single sign-on authentication for on-premises users when accessing Azure AD-integrated resources. This method is also required by some premium Azure AD features, such as Identity Protection.
+
+In order to implement step-up authentication, the Adatum Enterprise Architecture team intends to take advantage of Azure AD Conditional Access policies. Conditional Access policies support enforcement of multi-factor authentication depending on the type of application or resource being accesed. Conditional Access policies are enforced after the first-factor authentication has been completed. Conditional Access can be based on a wide range of factors, including:
+
+- User or group membership. Policies can be targeted to specific users and groups giving administrators fine-grained control over access.
+- IP Location information. Organizations can create trusted IP address ranges that can be used when making policy decisions. Administrators can specify entire countries/regions IP ranges to block or allow traffic from.
+- Device. Users with devices of specific platforms or marked with a specific state can be used when enforcing Conditional Access policies.
+- Application. Users attempting to access specific applications can trigger different Conditional Access policies.
+- Real-time and calculated risk detection. Signals integration with Azure AD Identity Protection allows Conditional Access policies to identify risky sign-in behavior. Policies can then force users to perform password changes or multi-factor authentication to reduce their risk level or be blocked from access until an administrator takes manual action.
+- Microsoft Cloud App Security (MCAS). Enables user application access and sessions to be monitored and controlled in real time, increasing visibility and control over access to and activities performed within your cloud environment.
+
+To accomplish these objectives the Adatum Enterprise Architecture team intends to test integration of its Active Directory Domain Services (AD DS) forest with its Azure Active Directory (Azure AD) tenant and evaluate the conditional access functionality for its pilot users.
+
+## Objectives
   
 After completing this lab, you will be able to:
 
@@ -17,7 +35,7 @@ After completing this lab, you will be able to:
  - Integrate an AD DS forest with an Azure AD tenant
 
 
-### Lab Environment
+## Lab Environment
   
 Windows Server admin credentials
 
@@ -28,10 +46,12 @@ Windows Server admin credentials
 Estimated Time: 120 minutes
 
 
-### Lab Files
+## Lab Files
 
 -  \\\\AZ303\\AllFiles\\Labs\\10\\azuredeploy30310suba.json
 
+
+## Instructions
 
 ### Exercise 0: Prepare the lab environment
 
@@ -103,7 +123,7 @@ The main tasks for this exercise are as follows:
     > **Note**: Do not wait for the deployment to complete but instead proceed to the next exercise. The deployment might take about 15 minutes. You will use the virtual machine deployed in this task in the third exercise of this lab.
 
 
-## Exercise 1: Create and configure an Azure AD tenant
+### Exercise 1: Create and configure an Azure AD tenant
   
 The main tasks for this exercise are as follows:
 
@@ -188,7 +208,7 @@ The main tasks for this exercise are as follows:
 1. On the **Assign license** blade, select **Assign**. 
 
 
-## Exercise 2: Integrate an AD DS forest with an Azure AD tenant
+### Exercise 2: Integrate an AD DS forest with an Azure AD tenant
   
 The main tasks for this exercise are as follows:
 
@@ -355,7 +375,7 @@ The main tasks for this exercise are as follows:
 1. On the **Update license assignments** blade, select the **Azure Active Directory Premium P2** checkbox and select **Save**.
 
 
-## Exercise 4: Implement Azure AD conditional access
+### Exercise 3: Implement Azure AD conditional access
   
 The main tasks for this exercise are as follows:
 
