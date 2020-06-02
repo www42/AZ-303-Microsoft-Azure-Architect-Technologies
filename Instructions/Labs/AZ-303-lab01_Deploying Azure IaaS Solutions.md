@@ -9,11 +9,11 @@ lab:
 
 ## Lab scenario
   
-Adatum Corporation has a number of on-premises workloads running on a mix of physical servers and virtual machines. Most of the workloads reqiure some level of resiliency, including a range of high availability requirements. Most of them leverage either Windows Server Failover Clustering or Linux Corosync clusters and Pacemaker resource manager, with synchronous replication between cluster nodes. Adatum is trying to determine how the equivalent functionality can be implemented in Azure. In particular, the Adatum Enterprise Architecutre team is exploring the Azure platform capabilities that accommodate high availability requirements within the same data center and between data centers in the same region.
+Adatum Corporation has a number of on-premises workloads running on a mix of physical servers and virtual machines. Most of the workloads require some level of resiliency, including a range of high availability SLAs. Most of the workloads leverage either Windows Server Failover Clustering or Linux Corosync clusters and Pacemaker resource manager, with synchronous replication between cluster nodes. Adatum is trying to determine how the equivalent functionality can be implemented in Azure. In particular, the Adatum Enterprise Architecutre team is exploring the Azure platform capabilities that accommodate high availability requirements within the same data center and between data centers in the same region.
 
-In addition, the Adatum Enterprise Architrecture team realizes that resiliency alone might not be sufficient to provide the level of availability expected by its business operations. Some of the workloads have highly dynamic usage patterns, which are currently addressed based on continuous monitoring and custom scripting solutions, automatically provisioning and deprovisioning additional cluster nodes. Usage patterns of others are more stable, but also need to be occassionally adjusted to account for increase demand for disk space, memory, or processing resources.
+In addition, the Adatum Enterprise Architrecture team realizes that resiliency alone might not be sufficient to provide the level of availability expected by its business operations. Some of the workloads have highly dynamic usage patterns, which are currently addressed based on continuous monitoring and custom scripting solutions, automatically provisioning and deprovisioning additional cluster nodes. Usage patterns of others are more predictable, but also need to be occassionally adjusted to account for increase demand for disk space, memory, or processing resources.
 
-To satisfy these requirements, the Architecture team wants to test a range of highly available IaaS compute deployments, including:
+To accomplish these objectives, the Architecture team wants to test a range of highly available IaaS compute deployments, including:
 
 -  Availability sets-based deployment of Azure VMs behind an Azure Load Balancer Basic
 
