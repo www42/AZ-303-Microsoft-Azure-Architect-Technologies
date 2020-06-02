@@ -1,14 +1,21 @@
-# Module 4 - Migrating to Azure
-# Lab 7: Protecting Hyper-V VMs by using Azure Site Recovery
+---
+lab:
+    title: 'Lab: Protecting Hyper-V VMs by using Azure Site Recovery'
+    module: 'Module 1: Migrating to Azure'
+---
 
+# Lab: Protecting Hyper-V VMs by using Azure Site Recovery
+# Student lab manual
 
-### Scenario
-  
-Adatum Corporation wants to evaluate the use of Azure Site Recovery for protecting and, potentially, migrating on-premises Hyper-V virtual machines to Azure VM.
+## Lab scenario
 
->**Note**: For migration purposes, it is recommended to use Azure Migrate.
+While Adatum Corporation has, over the years, implemented a number of high availability provisiones for their on-premises workloads, its disaster recovery capabilities are still insufficient to address the Recovery Point Objectives (RPOs) and Recovery Time Objectives (RTOs) demanded by its business. Maintaining the existing secondary on-premises site requires an extensive effort and incurs significant costs. The failover and failback procedures are, for the most part, manual and are poorly documented. 
 
-### Objectives
+To address these shortcomings, the Adatum Enterprise Architecture team decided to explore capabilities of Azure Site Recovery, with Azure taking on the role of the hoster of the secondary site. Azure Site Recovery automatically and continously replicates workloads running on physical and virtual machines from the primary to the secondary site. Site Recovery uses storage-based replication mechanism, without intercepting application data. With Azure as the secondary site, data is stored in Azure Storage, with built-in resilience and low cost. The target Azure VMs are hydrated following a failover by using the replicated data. The Recovery Time Objectives (RTO) and Recovery Point objectives are minimized since Site Recovery provides continuous replication for VMware VMs and replication frequency as low as 30 seconds for Hyper-V VMs. In addition, Azure Site Recovery also handles orchestration of failover and failback processes, which, to large extent, can be automated. It is also possible to use Azure Site Recovery for migrations to Azure, although the recommended approach relies on Azure Migrate instead.
+
+The Adatum Enterprise Architecture team wants to evaluate the use of Azure Site Recovery for protecting on-premises Hyper-V virtual machines to Azure VM.
+
+## Objectives
   
 After completing this lab, you will be able to:
 
@@ -21,8 +28,8 @@ After completing this lab, you will be able to:
 -  Perform unplanned failover
 
 
-### Lab Environment
-  
+## Lab Environment
+
 Windows Server admin credentials
 
 -  User Name: **Student**
@@ -32,7 +39,7 @@ Windows Server admin credentials
 Estimated Time: 120 minutes
 
 
-### Lab Files
+## Lab Files
 
 -  \\\\AZ303\\AllFiles\\Labs\\07\\azuredeploy30307suba.json
 
@@ -170,7 +177,7 @@ The main tasks for this exercise are as follows:
    Rename-Computer -NewName 'az30307a-vm1' -Restart
    ```
 
-## Exercise 1: Create and configure an Azure Site Recovery vault
+### Exercise 1: Create and configure an Azure Site Recovery vault
   
 The main tasks for this exercise are as follows:
 
@@ -216,7 +223,7 @@ The main tasks for this exercise are as follows:
 1. On the **Security Settings** blade, set **Soft Delete** to **Disable**, select **Save** and close the **Security Settings** blade.
 
 
-## Exercise 2: Implement Hyper-V protection by using Azure Site Recovery vault
+### Exercise 2: Implement Hyper-V protection by using Azure Site Recovery vault
   
 The main tasks for this exercise are as follows:
 

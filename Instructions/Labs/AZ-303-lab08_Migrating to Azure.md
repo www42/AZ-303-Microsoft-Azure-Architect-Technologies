@@ -1,12 +1,30 @@
-# Module 4 - Migrating to Azure
-# Lab 8: Migrating Hyper-V VMs to Azure by using Azure Migrate
+---
+lab:
+    title: 'Lab: Migrating Hyper-V VMs to Azure by using Azure Migrate'
+    module: 'Module 4: Migrating to Azure'
+---
 
+# Lab: Migrating Hyper-V VMs to Azure by using Azure Migrate
+# Student lab manual
 
-### Scenario
-  
-Adatum Corporation wants to evaluate the use of Azure Migrate for migrating their on-premises Hyper-V virtual machines to Azure VM.
+## Lab scenario
 
-### Objectives
+Despite its ambitions to modernize its workloads as part of migration to Azure, the Adatum Enterprise Architecture team realizes that, due to aggressive timelines, in many cases, it will be necessary to follow the lift-and-shift approach. To simplify this task, the Adatum Enterprise Architecture team started exploring the capabilities of Azure Migrate. Azure Migrate serves as a centralized hub to assess and migrate to Azure on-premises servers, infrastructure, applications, and data.
+
+Azure Migrate provides the following features:
+
+- Unified migration platform: A single portal to start, run, and track your migration to Azure.
+- Range of tools: A range of tools for assessment and migration. Tools include Azure Migrate: Server Assessment and Azure Migrate: Server Migration. Azure Migrate integrates with other Azure services and with other tools and independent software vendor (ISV) offerings.
+- Assessment and migration: In the Azure Migrate hub, you can assess and migrate:
+- Servers: Assess on-premises servers and migrate them to Azure virtual machines.
+- Databases: Assess on-premises databases and migrate them to Azure SQL Database or to SQL Managed Instance.
+- Web applications: Assess on-premises web applications and migrate them to Azure App Service by using the Azure App Service Migration Assistant.
+- Virtual desktops: Assess your on-premises virtual desktop infrastructure (VDI) and migrate it to Windows Virtual Desktop in Azure.
+- Data: Migrate large amounts of data to Azure quickly and cost-effectively using Azure Data Box products.
+
+While databases, web apps, and virual desktops are in scope of the next stage of the migration initiative, Adatum Enterprise Architecture team wants to start by evaluating the use of Azure Migrate for migrating their on-premises Hyper-V virtual machines to Azure VM.
+
+## Objectives
   
 After completing this lab, you will be able to:
 
@@ -17,7 +35,7 @@ After completing this lab, you will be able to:
 -  Migrate Hyper-V VMs by using Azure Migrate
 
 
-### Lab Environment
+## Lab Environment
   
 Windows Server admin credentials
 
@@ -28,7 +46,7 @@ Windows Server admin credentials
 Estimated Time: 120 minutes
 
 
-### Lab Files
+## Lab Files
 
 -  \\\\AZ303\\AllFiles\\Labs\\08\\azuredeploy30308suba.json
 
@@ -167,7 +185,7 @@ The main tasks for this exercise are as follows:
    Rename-Computer -NewName 'az30308a-vm1' -Restart
    ```
 
-## Exercise 1: Prepare for assessment and migration by using Azure Migrate
+### Exercise 1: Prepare for assessment and migration by using Azure Migrate
   
 The main tasks for this exercise are as follows:
 
@@ -306,7 +324,7 @@ The main tasks for this exercise are as follows:
 1. On the **Review + create** tab of the **Create storage account** blade, select **Create**.
 
 
-## Exercise 2: Assess Hyper-V for migration by using Azure Migrate
+### Exercise 2: Assess Hyper-V for migration by using Azure Migrate
   
 The main tasks for this exercise are as follows:
 
@@ -449,7 +467,7 @@ The main tasks for this exercise are as follows:
     >**Note**: In real-world scenarios, you should consider installing dependency agent to provide more insights into server dependencies during the assessment stage.
 
 
-## Exercise 3: Migrate Hyper-V VMs by using Azure Migrate
+### Exercise 3: Migrate Hyper-V VMs by using Azure Migrate
   
 The main tasks for this exercise are as follows:
 
