@@ -1,10 +1,19 @@
-# Module 2 - Data Storage
-# Lab 2: Implementing and configuring Azure Storage File and Blob Services
-  
+---
+lab:
+    title: 'Lab: Implementing and configuring Azure Storage File and Blob Services'
+    module: 'Module 2: Data Storage'
+---
 
-### Scenario
-  
-Adatum Corporation wants to test a range of authentication and authorization mechanisms for Azure Storage resources, including:
+# Lab: Implementing and configuring Azure Storage File and Blob Services
+# Student lab manual
+
+## Lab scenario
+ 
+Adatum Corporation hosts large amounts of unstructured and semi-structured data in its on-premises storage. Its maintenance becomes increasingly complex and costly. Some of the data is preserved for extensive amount of time in order to address data retention requirements. Adatum Enterprise Architecture team is looking for inexpensive alternatives that would support tiered storage, while, at the same time allow for fsecure access that minimizes the possibility of data exfiltration. While the team is aware of the practically unlimited capacity offered by Azure Storage, it is concerned about the usage of account keys, which grant unlimited access to the entire content of the corresponding storage account. While keys can be rotated in an orderly manner, such operation needs to be carried out with proper planning. In addition, access keys constitute exclusively an authorization mechanism, which limits the ability to properly audit their usage. 
+
+To address these shortcomings, the Architecture decided to explore the use of shared access signatures. A shared access signature (SAS) provides secure delegated access to resources in a storage account while minimizing the possiblity of unintended data exposure. SAS offers granular control over data access, including the ability to limit access to an individual storage object, such as a blob, restricting such access to a custom time window, as well as filtering network access to a designated IP address range. In addition, the Architecture team wants to evaluate the level of integration between Azure Storage and Azure Active Directory, hoping to address its audit requirements. The Engineering team also decided to determine suitability of Azure Files as an alernative to some of its on-premises file shares.
+
+To accomplish these objectives, Adatum Corporation will test a range of authentication and authorization mechanisms for Azure Storage resources, including:
 
 -  Using shared access signatures on the account, container, and object-level
 
@@ -15,7 +24,7 @@ Adatum Corporation wants to test a range of authentication and authorization mec
 -  Using storage account access keys
 
 
-### Objectives
+## Objectives
   
 After completing this lab, you will be able to:
 
@@ -26,7 +35,7 @@ After completing this lab, you will be able to:
 -  Implement authorization of Azure Storage file shares by leveraging access keys
 
 
-### Lab Environment
+## Lab Environment
   
 Windows Server admin credentials
 
@@ -37,7 +46,7 @@ Windows Server admin credentials
 Estimated Time: 90 minutes
 
 
-### Lab Files
+## Lab Files
 
 -  \\\\AZ303\\AllFiles\\Labs\\02\\azuredeploy30302suba.json
 
@@ -283,7 +292,7 @@ The main tasks for this exercise are as follows:
 1. Verify that the message **Hello from az30302ablob via SAS** appears in the browser window.
 
 
-## Exercise 2: Configure Azure Storage blob service authorization by using Azure Active Directory
+### Exercise 2: Configure Azure Storage blob service authorization by using Azure Active Directory
   
 The main tasks for this exercise are as follows:
 
@@ -415,7 +424,7 @@ The main tasks for this exercise are as follows:
    ```
 
 
-## Exercise 3: Implement Azure Files.
+### Exercise 3: Implement Azure Files.
   
 The main tasks for this exercise are as follows:
 
