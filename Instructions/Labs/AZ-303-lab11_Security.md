@@ -1,12 +1,22 @@
-# Module 4 - Security
-# Lab 11: Managing Azure Role-Based Access Control
+---
+lab:
+    title: 'Lab: Managing Azure Role-Based Access Control'
+    module: 'Module 5: Security'
+---
 
-### Scenario
+# Lab: Managing Azure Role-Based Access Control
+# Student lab manual
 
-Adatum Corporation wants to test delegation of Azure management by using Role-Based Access Control
+## Lab scenario
+
+With Azure Active Directory (Azure AD) becoming integral part of its identity management environment, the Adatum Enterprise Architecture team must also determine the optimal authorization approach. In the context of controlling access to Azure resources, such approach must involve the use of Azure Role-Based Access Control (RBAC). Azure RBAC is an authorization system built on Azure Resource Manager that provides fine-grained access management of Azure resources.
+
+The key concept of Azure RBAC is role assignment. A role assignment consists of three elements: security principal, role definition, and scope. A security principal is an object that represents a user, group, service principal, or managed identity that is requesting access to Azure resources. A role definition is a collection of the operations that the role assignments will grant, such as read, write, or delete. Roles can be generic or resource-specific. Azure includes four built-in generic roles (Owner, Contributor, Reader, and User Access Administrator) and a fairly large number of built-in resource-specific roles (such as, for example, Virtual Machine Contributor, which includes permissions to create and manage Azure virtual machines). It is also possible to define custom roles. A scope is the set of resources that the access applies to. A scope can be set at multiple levels: management group, subscription, resource group, or resource. Scopes are structured in a parent-child relationship.
+
+The Adatum Enterprise Architecture team wants to test delegation of Azure management by using custom Role-Based Access Control roles. To start its evaluation, the team intends to create a custom role that provides restricted access to Azure virtual machines. 
   
 
-### Objectives
+## Objectives
   
 After completing this lab, you will be able to:
 
@@ -15,8 +25,7 @@ After completing this lab, you will be able to:
 -  Assign a custom RBAC role
 
 
-
-### Lab Environment
+## Lab Environment
   
 Windows Server admin credentials
 
@@ -27,7 +36,7 @@ Windows Server admin credentials
 Estimated Time: 60 minutes
 
 
-### Lab Files
+## Lab Files
 
 -  \\\\AZ303\\AllFiles\\Labs\\11\\azuredeploy30311suba.json
 
@@ -38,6 +47,7 @@ Estimated Time: 60 minutes
 -  \\\\AZ303\\AllFiles\\Labs\\11\\roledefinition30311.json
 
 
+## Instructions
 
 ### Exercise 0: Prepare the lab environment
 
@@ -126,7 +136,7 @@ The main tasks for this exercise are as follows:
 1. Close the Cloud Shell pane.
 
 
-## Exercise 1: Define a custom RBAC role
+### Exercise 1: Define a custom RBAC role
   
 The main tasks for this exercise are as follows:
 
@@ -209,7 +219,7 @@ The main tasks for this exercise are as follows:
 1. Close the Cloud Shell pane.
 
 
-## Exercise 2: Assign and test a custom RBAC role
+### Exercise 2: Assign and test a custom RBAC role
   
 The main tasks for this exercise are as follows:
 
@@ -250,7 +260,7 @@ The main tasks for this exercise are as follows:
 1. Restart the virtual machine and verify that the action completed successfully.
 
 
-#### Task 4: Remove Azure resources deployed in the lab
+#### Task 3: Remove Azure resources deployed in the lab
 
 1. From the lab computer, in the browser window displaying the Azure portal, start a PowerShell session within the Cloud Shell pane.
 
