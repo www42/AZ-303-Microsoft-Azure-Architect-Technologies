@@ -1,10 +1,23 @@
-# Module 3 - Manage Compute - PaaS
-# Lab 6: Implementing containers on Azure
+---
+lab:
+    title: 'Lab: Implementing containers on Azure'
+    module: 'Module 3: Manage Compute - PaaS'
+---
 
- 
-### Scenario
-  
-Adatum Corporation wants to test a number of scenarios that involve the use of Docker containers on Azure, including:
+# Lab: Implementing containers on Azure
+# Student lab manual
+
+## Lab scenario
+
+Adatum Corporation became interested in containerization a few years ago, before it started entertaining the idea of migrating some of its workloads to Azure. Since then, its developers and engineers implemented a wide range of Docker-based applications, running on Windows Server 2016 and Linux Ubuntu 16.04. The Enterprise Architecture team also designed and assisted with implementation of an on-premises deployments of Kubernetes clusters to host a number more complex, containerized multi-tier applications. However, operational teams that took over management and maintainance of the clusters has been complaining about significant administrative overhead.
+
+As part of the initiative of migrating on-premises workloads to Azure, the Enterprise Architecture team wants to evaluate different methods of running containerized apps in the cloud. While it is apparent that it is possible to deploy containers to Azure VMs in order to mirror their on-premises deployment model, the use of managed offerings, such as Azure Container Instances (ACI) and Azure Kubernetes Service (AKS) is considerably more compelling since it minimizes administrative overhead and offers additional agility and cost reduction benefits. The portability, inherent to containerization technologies, provides flexibility when choosing the target platform. 
+
+Azure Container Instances offers the fastest and simplest way to run a container in Azure, without having to manage virtual machines or having to adopt a higher-level service. Azure Container Instances provide some of the basic scheduling capabilities of orchestration platforms, including all of the scheduling and management capabilities required to run a single container
+
+Azure Kubernetes Service accommdates scenarios that require full container orchestration, including service discovery across multiple containers, automatic scaling, and coordinated application upgrades. It is also possible to combine benefits of ACI and AKS, by using the orchestrator platforms to manage multi-container tasks running within ACIs. 
+
+In order to evaluate these capabilities, the Adatum Architecture team wants to test the following scenarios that involve the use of Docker containers on Azure:
 
 -  containers running in Azure VMs
 
@@ -13,7 +26,7 @@ Adatum Corporation wants to test a number of scenarios that involve the use of D
 -  container orchestration by using Azure Kubernetes Service (AKS)
 
 
-### Objectives
+## Objectives
   
 After completing this lab, you will be able to:
 
@@ -24,7 +37,7 @@ After completing this lab, you will be able to:
 -  deploy containers to Azure Kubernetes Service (AKS) clusters
 
 
-### Lab Environment
+## Lab Environment
   
 Windows Server admin credentials
 
@@ -35,7 +48,7 @@ Windows Server admin credentials
 Estimated Time: 120 minutes
 
 
-### Lab Files
+## Lab Files
 
 -  \\\\AZ303\\AllFiles\\Labs\\06\\azuredeploy30306suba.json
 
@@ -176,7 +189,7 @@ The main tasks for this exercise are as follows:
 1. If the operating system restarts, reestablish Remote Desktop connection to the **az30306a-vm0** Azure VM and, when prompted, sign in with the same credentials as before.
 
 
-## Exercise 1: Build an ASP.NET Core app in Docker containers
+### Exercise 1: Build an ASP.NET Core app in Docker containers
 
 1. Build and deploy an ASP.NET Core sample app
 
@@ -294,7 +307,7 @@ The main tasks for this exercise are as follows:
    docker rm aspnetapp-container
    ```
 
-## Exercise 2: Push an image into Azure Container Registry
+### Exercise 2: Push an image into Azure Container Registry
 
 1. Create and configure an Azure container registry
 
@@ -386,7 +399,7 @@ The main tasks for this exercise are as follows:
    az acr repository list --name $ACRNAME --output table
    ```
 
-## Exercise 3: Deploy an image from Azure Container Registry to an Azure container instance
+### Exercise 3: Deploy an image from Azure Container Registry to an Azure container instance
 
 1. Create an Azure container instance
 
@@ -438,7 +451,7 @@ In this task, you will review the deployment of the container instance.
 1. Close the new browser tab.
 
 
-## Exercise 4: Deploy an image from Azure Container Registry to an Azure Kubernetes Service (AKS) cluster
+### Exercise 4: Deploy an image from Azure Container Registry to an Azure Kubernetes Service (AKS) cluster
 
 1. Create an AKS cluster
 
