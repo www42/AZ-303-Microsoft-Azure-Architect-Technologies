@@ -1,36 +1,54 @@
-# Module 3 - Manage Compute - PaaS
-# Lab 5: Implementing an Azure App Service web app with a staging slot
+---
+lab:
+    title: 'Lab: Implementing an Azure App Service web app with a staging slot'
+    module: 'Module 3: Manage Compute - PaaS'
+---
 
- 
-### Scenario
-  
-Adatum Corporation wants to use Azure App Service web apps with staging slots in order to test two of their planned deployment patterns:
+# Lab: Implementing an Azure App Service web app with a staging slot
+# Student lab manual
+
+## Lab scenario
+
+Adatum Corporation has a number of web apps that are updated on relatively frequent basis. While Adatum has not yet fully embraced DevOps principles, it relies on Git as its version control and is exploring the options to streamline the app updates. As Adatum is transitioning some of its workloads to Azure, the Adatum Enterprise Architecture team decided to evaluate the use of Azure App Service and its deployment slots to accomplish this objective. 
+
+Deployment slots are live apps with their own host names. App content and configurations elements can be swapped between two deployment slots, including the production slot. Deploying apps to a non-production slot has the following benefits:
+
+- It is possible to validate app changes in a staging deployment slot before swapping it with the production slot.
+
+- Deploying an app to a slot first and swapping it into production makes sure that all instances of the slot are warmed up before being swapped into production. This eliminates downtime when during app deployment. The traffic redirection is seamless, and no requests are dropped because of swap operations. This workflow can be automated by configuring auto swap when pre-swap validation is not needed.
+
+- After a swap, the slot with previously staged app has the previous production app. If the changes swapped into the production slot need to be reversed, this simply involves another swap immediately to return to the last known good state.
+
+Deployment slots facilitate two common deployment patterns: blue/green and A/B testing. Blue-green deployment involves deploying an update into a production environment that is separate from the live application. After the deployment is validated, traffic routing is switched to the updated version. A/B testing involves gradually routing some of the traffic to a staging site in order to test a new version of an app.
+
+The Adatum Architecture team wants to use Azure App Service web apps with deployment slots in order to test these two deployment patterns:
 
 -  Blue/Green deployments 
 
 -  A/B testing 
 
 
-### Objectives
+## Objectives
   
 After completing this lab, you will be able to:
 
--  Implement Blue/Green deployment pattern by using Azure App Service web apps
+-  Implement Blue/Green deployment pattern by using deployment slots of Azure App Service web apps
 
--  Perform A/B testing by using Azure App Service web apps
+-  Perform A/B testing by using deployment slots of Azure App Service web apps
 
 
-### Lab Environment
+## Lab Environment
   
 Estimated Time: 60 minutes
 
 
-### Lab Files
+## Lab Files
 
 None
 
+## Instructions
 
-## Exercise 1: Implement an Azure App Service web app
+### Exercise 1: Implement an Azure App Service web app
 
 1. Deploy an Azure App Service web app
 
@@ -143,7 +161,7 @@ None
     | Clone settings from | the name of the web app |
 
 
-## Exercise 2: Manage App Service web app deployment slots
+### Exercise 2: Manage App Service web app deployment slots
   
 The main tasks for this exercise are as follows:
 
