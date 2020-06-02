@@ -1,17 +1,28 @@
-# Module 2 - Data Storage
-# Lab 3: Implementing Azure SQL Database-based applications
+---
+lab:
+    title: 'Lab: Implementing Azure SQL Database-based applications'
+    module: 'Module 2: Data Storage'
+---
 
- 
-### Scenario
+# Lab: Implementing Azure SQL Database-based applications
+# Student lab manual
+
+## Lab scenario
+
+Adatum Corporation has a number two tier applications with .NET Core-based front end and SQL Server-based backend. The Adatum Enterprise Architecture team is exploring the possibility of implementing these applications by leveraging Azure SQL Database as the data tier. Considering intermittent, unpredictable usage of the existing SQL Server backend and relatively high tolerance for latency built into the front-end apps, Adatum is considering the serverless tier of Azure SQL Database. 
+
+Serverless is a compute tier for individual Azure SQL Databases instances that automatically scales compute based on workload demand and bills for the amount of compute used per second. The serverless compute tier is also capable of automatically pausing databases during inactive periods when only storage is billed and automatically resumes databases when activity returns.
+
+The Adatum Enterprise Architecture team is also interested in evaluating network-level security provided by the Azure SQL Databases, in order to ensure that it is possible to restrct inbound connections to specific ranges of IP addresses, in scenarios where the apps must be able to connect from its on-premises locations without relying on hybrid connectivity via Site-to-Site VPN or ExpressRoute. 
   
-Adatum Corporation wants to test Azure SQL Database-based applications, including:
+To accomplish these objectives, Adatum Corporation will test Azure SQL Database-based applications, including:
 
 -  Implementing serverless tier of Azure SQL Database
 
 -  Implementing .NET Core console apps that use Azure SQL Database as their data store
 
 
-### Objectives
+## Objectives
   
 After completing this lab, you will be able to:
 
@@ -20,7 +31,7 @@ After completing this lab, you will be able to:
 -  Configure .NET Core-based console apps that use Azure SQL Database as their data store
 
 
-### Lab Environment
+## Lab Environment
   
 Windows Server admin credentials
 
@@ -31,7 +42,7 @@ Windows Server admin credentials
 Estimated Time: 60 minutes
 
 
-### Lab Files
+## Lab Files
 
 -  None
 
@@ -117,7 +128,7 @@ The main tasks for this exercise are as follows:
 1. Review the **Results** tab to verify that the query completed successfully.
 
 
-## Exercise 2: Implement a .NET Core console app that uses Azure SQL Database as their data store
+### Exercise 2: Implement a .NET Core console app that uses Azure SQL Database as their data store
   
 The main tasks for this exercise are as follows:
 
