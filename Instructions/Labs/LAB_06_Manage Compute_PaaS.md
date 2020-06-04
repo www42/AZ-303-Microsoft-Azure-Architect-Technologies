@@ -151,7 +151,7 @@ The main tasks for this exercise are as follows:
    ```powershell
    $oldPath=(Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH).path
    $newPath=$oldPath+';C:\Program Files\dotnet'
-   Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH –Value $newPath
+   Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH â€“Value $newPath
    ```
 
 1. Within the Remote Desktop session to **az30306a-vm0**, within the **Administrator: Windows PowerShell** console, run the following to install Git.
@@ -527,7 +527,7 @@ In this task, you will review the deployment of the container instance.
    ```sh
    AKSRGNAME='az30306d-LabRG'
    AKSNAME='az30306d-aks1'
-   az aks get-credentials --resource-group $RGNAME --name $AKSNAME
+   az aks get-credentials --resource-group $AKSRGNAME --name $AKSNAME
    ```
 
 1. From the Cloud Shell pane, run the following to verify the connection to your cluster by listing the cluster nodes, including one running Linux and the other Windows Server:
