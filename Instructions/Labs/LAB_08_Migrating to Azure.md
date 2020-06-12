@@ -22,7 +22,7 @@ Azure Migrate provides the following features:
 - Virtual desktops: Assess your on-premises virtual desktop infrastructure (VDI) and migrate it to Windows Virtual Desktop in Azure.
 - Data: Migrate large amounts of data to Azure quickly and cost-effectively using Azure Data Box products.
 
-While databases, web apps, and virual desktops are in scope of the next stage of the migration initiative, Adatum Enterprise Architecture team wants to start by evaluating the use of Azure Migrate for migrating their on-premises Hyper-V virtual machines to Azure VM.
+While databases, web apps, and virtual desktops are in scope of the next stage of the migration initiative, Adatum Enterprise Architecture team wants to start by evaluating the use of Azure Migrate for migrating their on-premises Hyper-V virtual machines to Azure VM.
 
 ## Objectives
   
