@@ -1,10 +1,10 @@
 ---
 lab:
-    title: 'Lab: Managing Azure AD authentication and authorization'
+    title: 'Lab: Managing Azure AD Authentication and Authorization'
     module: 'Module 5: Security'
 ---
 
-# Lab: Managing Azure AD authentication and authorization
+# Lab: Managing Azure AD Authentication and Authorization
 # Student lab manual
 
 ## Lab scenario
@@ -13,7 +13,7 @@ As part of its migration to Azure, Adatum Corporation needs to define its identi
 
 The new model should facilitate single sign-on, along with per-application step-up authentication that leverages multi-factor authentication capabilities of Azure AD. To implement single sign-on, the Architecture team plans to deploy Azure AD Connect and configure it for password hash synchronization, resulting in matching user objects in both identity stores. Choosing the optimal authentication method is the first concern for organizations wanting to move to the cloud. Azure AD password hash synchronization is the simplest way to implement single sign-on authentication for on-premises users when accessing Azure AD-integrated resources. This method is also required by some premium Azure AD features, such as Identity Protection.
 
-In order to implement step-up authentication, the Adatum Enterprise Architecture team intends to take advantage of Azure AD Conditional Access policies. Conditional Access policies support enforcement of multi-factor authentication depending on the type of application or resource being accesed. Conditional Access policies are enforced after the first-factor authentication has been completed. Conditional Access can be based on a wide range of factors, including:
+To implement step-up authentication, the Adatum Enterprise Architecture team intends to take advantage of Azure AD Conditional Access policies. Conditional Access policies support enforcement of multi-factor authentication depending on the type of application or resource being accessed. Conditional Access policies are enforced after the first-factor authentication has been completed. Conditional Access can be based on a wide range of factors, including:
 
 - User or group membership. Policies can be targeted to specific users and groups giving administrators fine-grained control over access.
 - IP Location information. Organizations can create trusted IP address ranges that can be used when making policy decisions. Administrators can specify entire countries/regions IP ranges to block or allow traffic from.
