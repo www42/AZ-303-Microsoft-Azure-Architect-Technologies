@@ -1,10 +1,10 @@
 ---
 lab:
-    title: 'Lab: Implementing an Azure App Service web app with a staging slot'
+    title: 'Lab: Implementing an Azure App Service Web App with a Staging Slot'
     module: 'Module 3: Manage Compute - PaaS'
 ---
 
-# Lab: Implementing an Azure App Service web app with a staging slot
+# Lab: Implementing an Azure App Service Web App with a Staging Slot
 # Student lab manual
 
 ## Lab scenario
