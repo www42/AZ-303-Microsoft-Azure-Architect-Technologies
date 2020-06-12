@@ -1,10 +1,10 @@
 ---
 lab:
-    title: 'Lab: Implementing highly available Azure IaaS compute architecture'
+    title: 'Lab: Implementing Highly Available Azure IaaS Compute Architecture'
     module: 'Module 1: Deploying Azure IaaS Solutions'
 ---
 
-# Lab: Implementing highly available Azure IaaS compute architecture
+# Lab: Implementing Highly Available Azure IaaS Compute Architecture
 # Student lab manual
 
 ## Lab scenario
