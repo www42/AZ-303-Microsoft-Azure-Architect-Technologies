@@ -110,7 +110,7 @@ The main tasks for this exercise are as follows:
 1. In the Azure portal, close the **Cloud Shell** pane. 
 
 
-### Exercise1: Configure authentication and authorization for an Azure logic app
+### Exercise 1: Configure authentication and authorization for an Azure logic app
 
 1. Create an Azure Active Directory service principal
 
@@ -163,7 +163,7 @@ The main tasks for this exercise are as follows:
     | Select | **az30304aadsp** |
 
 
-### Exercise2: Implement an Azure logic app
+### Exercise 2: Implement an Azure logic app
   
 The main tasks for this exercise are as follows:
 
@@ -276,7 +276,7 @@ The main tasks for this exercise are as follows:
 1. On the **Logic Apps Designer** blade, select **Save**. 
 
 
-### Exercise3: Implement an event subscription
+### Exercise 3: Implement an event subscription
   
 The main tasks for this exercise are as follows:
 
