@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab: Implementing and Configuring Azure Storage File and Blob Services'
-    module: 'Module 2: Data Storage'
+    module: 'Module 5: Implement Storage Accounts'
 ---
 
 # Lab: Implementing and Configuring Azure Storage File and Blob Services
