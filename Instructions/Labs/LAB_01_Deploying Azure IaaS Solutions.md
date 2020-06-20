@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab: Implementing Highly Available Azure IaaS Compute Architecture'
-    module: 'Module 1: Deploying Azure IaaS Solutions'
+    module: 'Module 4: Implement Load Balancing and Network Security'
 ---
 
 # Lab: Implementing Highly Available Azure IaaS Compute Architecture
