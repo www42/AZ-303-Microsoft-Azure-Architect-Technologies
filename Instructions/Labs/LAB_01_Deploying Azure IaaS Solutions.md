@@ -672,7 +672,7 @@ The main tasks for this exercise are as follows:
 
 ### Task 2: Scale storage resources of Azure virtual machine scale sets instances.
 
-1. On the **az30301c-vmss** blade, select **Storage**, select **+ Add data disk**, attach a new managed disk with the following settings (leave others with their default values), and select **Save**:
+1. On the **az30301c-vmss** blade, select **Disks**, select **+ Add data disk**, attach a new managed disk with the following settings (leave others with their default values), and select **Save**:
 
     | Setting | Value | 
     | --- | --- |
