@@ -244,7 +244,7 @@ The main tasks for this exercise are as follows:
 
 1. Select **Generate SAS and connection string**.
 
-1. Copy the value of **Blob service SAS URL** into Clipboard.
+1. Copy the value of **SAS token** into Clipboard.
 
 1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
