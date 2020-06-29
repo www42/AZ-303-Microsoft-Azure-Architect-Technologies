@@ -201,7 +201,7 @@ The main tasks for this exercise are as follows:
     | Vault name | **az30307b-rsvault** |
     | Location | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
 
-1. On the **Review + create** tab of the **Create Recovery Services vault** blade, review the information regarding Storage Replication type and Soft Delete settings and select **Create**:
+1. On the **Review + create** tab of the **Create Recovery Services vault** blade, select **Create**:
 
     >**Note**: By default, the default configuration for Storage Replication type is set to Geo-redundant (GRS) and Soft Delete is enabled. You will change these settings in the lab to simplify deprovisioning, but you should use them in your production environments.
 
