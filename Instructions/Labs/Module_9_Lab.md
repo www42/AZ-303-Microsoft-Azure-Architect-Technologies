@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab: Protecting Hyper-V VMs by using Azure Site Recovery'
+    title: '9: Protecting Hyper-V VMs by using Azure Site Recovery'
     module: 'Module 9: Manage Workloads in Azure'
 ---
 
