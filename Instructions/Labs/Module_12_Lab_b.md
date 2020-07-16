@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab: Configuring a Message-Based Integration Architecture'
+    title: '12B: Configuring a Message-Based Integration Architecture'
     module: 'Module 12: Implement an Application Infrastructure'
 ---
 
