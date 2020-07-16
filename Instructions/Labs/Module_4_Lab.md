@@ -657,7 +657,7 @@ The main tasks for this exercise are as follows:
 1. Scaling storage resources of Azure virtual machine scale sets instances.
 
 
-### Task 1: Scale compute resources of Azure virtual machine scale set instances.
+#### Task 1: Scale compute resources of Azure virtual machine scale set instances.
 
 1. In the Azure Portal, on the **az30301c-vmss** blade, select **Size**.
 
@@ -670,7 +670,7 @@ The main tasks for this exercise are as follows:
 1. Wait until the instances are updated and running.
 
 
-### Task 2: Scale storage resources of Azure virtual machine scale sets instances.
+#### Task 2: Scale storage resources of Azure virtual machine scale sets instances.
 
 1. On the **az30301c-vmss** blade, select **Disks**, select **+ Add data disk**, attach a new managed disk with the following settings (leave others with their default values), and select **Save**:
 
