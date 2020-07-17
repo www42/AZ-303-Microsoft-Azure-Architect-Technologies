@@ -1,0 +1,448 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vNet1Name": {
+            "type": "string",
+            "defaultValue": "vnet1"
+        },
+        "vNet2Name": {
+            "type": "string",
+            "defaultValue": "vnet2"
+        },
+        "vm1Name": {
+            "type": "string",
+            "defaultValue": "vm1"
+        },
+        "vm2Name": {
+            "type": "string",
+            "defaultValue": "vm2"
+        },
+        "vm3Name": {
+            "type": "string",
+            "defaultValue": "vm3"
+        },
+        "adminUsername": {
+            "type": "string",
+            "defaultValue": "Student"
+        },
+        "adminPassword": {
+            "type": "string",
+            "defaultValue": "Pa55w.rd1234"
+        },
+        "vmSize": {
+            "type": "string",
+            "defaultValue": "Standard_D2s_v3"
+        }
+
+    },
+    "functions": [],
+    "variables": {
+        "nic1": "[concat(parameters('vm1Name'),'-nic')]",
+        "nic2": "[concat(parameters('vm2Name'),'-nic')]",
+        "nic3": "[concat(parameters('vm3Name'),'-nic')]",
+        "vnet1Subnet0Name": "subnet0",
+        "vnet1Subnet1Name": "subnet1",
+        "vnet2Subnet0Name": "subnet0",
+        "vnet1Subnet0Ref": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vNet1Name'), variables('vnet1Subnet0Name'))]",
+        "vnet1Subnet1Ref": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vNet1Name'), variables('vnet1Subnet1Name'))]",
+        "vnet1SubnetBastionRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vNet1Name'), 'AzureBastionSubnet')]",
+        "vnet2Subnet0Ref": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vNet2Name'), variables('vnet2Subnet0Name'))]",
+        "vnet2SubnetBastionRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vNet2Name'), 'AzureBastionSubnet')]",
+        "nsgNic1Name": "NSG1",
+        "nsgNic2Name": "NSG2",
+        "nsgNic3Name": "NSG3",
+        "pip1Name": "[concat(parameters('vNet1Name'),'-pip')]",
+        "pip2Name": "[concat(parameters('vNet2Name'),'-pip')]",
+        "pip1Ref": "[resourceId('Microsoft.Network/publicIPAddresses',variables('pip1Name'))]",
+        "pip2Ref": "[resourceId('Microsoft.Network/publicIPAddresses',variables('pip2Name'))]",
+        "bastion1Name": "[concat(parameters('vNet1Name'),'-bastion')]",
+        "bastion2Name": "[concat(parameters('vNet2Name'),'-bastion')]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('vNet1Name')]",
+            "apiVersion": "2019-11-01",
+            "location": "[resourceGroup().location]",
+            "tags": {},
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.1.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "subnet0",
+                        "properties": {
+                            "addressPrefix": "10.1.0.0/24"
+                        }
+                    },
+                    {
+                        "name": "subnet1",
+                        "properties": {
+                            "addressPrefix": "10.1.1.0/24"
+                        }
+                    },
+                    {
+                        "name": "AzureBastionSubnet",
+                        "properties": {
+                            "addressPrefix": "10.1.255.32/27"
+                        }
+                    }
+
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('vNet2Name')]",
+            "apiVersion": "2019-11-01",
+            "location": "[resourceGroup().location]",
+            "tags": {},
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.2.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "subnet0",
+                        "properties": {
+                            "addressPrefix": "10.2.0.0/24"
+                        }
+                    },
+                    {
+                        "name": "AzureBastionSubnet",
+                        "properties": {
+                            "addressPrefix": "10.2.255.32/27"
+                        }
+                    }
+
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkInterfaces",
+            "comments": "NIC of VM1",
+            "name": "[variables('nic1')]",
+            "apiVersion": "2019-12-01",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[parameters('vNet1Name')]",
+                "[variables('nsgNic1Name')]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "subnet": {
+                                "id": "[variables('vnet1Subnet0Ref')]"
+                            },
+                            "privateIPAllocationMethod": "Dynamic"
+                        }
+                    }
+                ],
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgNic1Name'))]"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkInterfaces",
+            "comments": "NIC of VM2",
+            "name": "[variables('nic2')]",
+            "apiVersion": "2019-12-01",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[parameters('vNet1Name')]",
+                "[variables('nsgNic2Name')]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "subnet": {
+                                "id": "[variables('vnet1Subnet1Ref')]"
+                            },
+                            "privateIPAllocationMethod": "Dynamic"
+                        }
+                    }
+                ],
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgNic2Name'))]"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkInterfaces",
+            "comments": "NIC of VM3",
+            "name": "[variables('nic3')]",
+            "apiVersion": "2019-12-01",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[parameters('vNet2Name')]",
+                "[variables('nsgNic3Name')]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "subnet": {
+                                "id": "[variables('vnet2Subnet0Ref')]"
+                            },
+                            "privateIPAllocationMethod": "Dynamic"
+                        }
+                    }
+                ],
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgNic3Name'))]"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[variables('nsgNic1Name')]",
+            "apiVersion": "2019-12-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "securityRules": []
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[variables('nsgNic2Name')]",
+            "apiVersion": "2019-12-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "securityRules": []
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[variables('nsgNic3Name')]",
+            "apiVersion": "2019-12-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "securityRules": []
+            }
+        },
+        {
+            "comments": "VM1",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('vm1Name')]",
+            "apiVersion": "2019-07-01",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[variables('nic1')]"
+            ],
+            "properties": {
+                "osProfile": {
+                    "computerName": "[parameters('vm1Name')]",
+                    "adminUsername": "[parameters('adminUsername')]",
+                    "adminPassword": "[parameters('adminPassword')]",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true
+                    }
+                },
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmSize')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2019-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "createOption": "FromImage"
+                    },
+                    "dataDisks": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "properties": {
+                                "primary": true
+                            },
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nic1'))]"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "comments": "VM2",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('vm2Name')]",
+            "apiVersion": "2019-07-01",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[variables('nic2')]"
+            ],
+            "properties": {
+                "osProfile": {
+                    "computerName": "[parameters('vm2Name')]",
+                    "adminUsername": "[parameters('adminUsername')]",
+                    "adminPassword": "[parameters('adminPassword')]",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true
+                    }
+                },
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmSize')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2019-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "createOption": "FromImage"
+                    },
+                    "dataDisks": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "properties": {
+                                "primary": true
+                            },
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nic2'))]"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "comments": "VM3",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('vm3Name')]",
+            "apiVersion": "2019-07-01",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[variables('nic3')]"
+            ],
+            "properties": {
+                "osProfile": {
+                    "computerName": "[parameters('vm3Name')]",
+                    "adminUsername": "[parameters('adminUsername')]",
+                    "adminPassword": "[parameters('adminPassword')]",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true
+                    }
+                },
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmSize')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2019-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "createOption": "FromImage"
+                    },
+                    "dataDisks": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "properties": {
+                                "primary": true
+                            },
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nic3'))]"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2019-12-01",
+            "name": "[variables('pip1Name')]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Standard"
+            },
+            "properties": {
+                "publicIPAllocationMethod": "Static"
+            }
+        },
+        {
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2019-12-01",
+            "name": "[variables('pip2Name')]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Standard"
+            },
+            "properties": {
+                "publicIPAllocationMethod": "Static"
+            }
+        },
+        {
+            "type": "Microsoft.Network/bastionHosts",
+            "apiVersion": "2019-07-01",
+            "name": "[variables('bastion1Name')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[parameters('vNet1Name')]",
+                "[variables('pip1Ref')]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[variables('pip1Ref')]"
+                            },
+                            "subnet": {
+                                "id": "[variables('vnet1SubnetBastionRef')]"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Network/bastionHosts",
+            "apiVersion": "2019-07-01",
+            "name": "[variables('bastion2Name')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[parameters('vNet2Name')]",
+                "[variables('pip2Ref')]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[variables('pip2Ref')]"
+                            },
+                            "subnet": {
+                                "id": "[variables('vnet2SubnetBastionRef')]"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "outputs": {}
+}
