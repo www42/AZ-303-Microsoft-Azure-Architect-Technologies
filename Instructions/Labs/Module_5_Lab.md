@@ -108,7 +108,7 @@ The main tasks for this exercise are as follows:
 1. In the Azure portal, close the **Cloud Shell** pane. 
 
 
-## Exercise 1: Configure Azure Storage account authorization by using shared access signature.
+### Exercise 1: Configure Azure Storage account authorization by using shared access signature.
   
 The main tasks for this exercise are as follows:
 
