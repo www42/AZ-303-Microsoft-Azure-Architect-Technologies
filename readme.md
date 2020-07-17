@@ -1,5 +1,6 @@
 # AZ-303: Microsoft Azure Architect Technologies
 
+- **[Link to LABS in HTML format](https://microsoftlearning.github.io/AZ-303-Microsoft-Azure-Architect-Technologies/)**
 - **[Download Latest Student Handbook and AllFiles Content](https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies/archive/master.zip)**
 - **Are you a MCT?** - Have a look at our [GitHub User Guide for MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
 - **Need to manually build the lab instructions?** - Instructions are available in the [MicrosoftLearning/Docker-Build](https://github.com/MicrosoftLearning/Docker-Build) repository
