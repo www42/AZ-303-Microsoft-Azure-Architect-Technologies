@@ -1,0 +1,19 @@
+# --------------
+cd tj/demo-vnet
+# --------------
+
+az account show
+az group list -o table
+
+rg="Demo-Vnet-RG"
+location="westeurope"
+
+az group create --name $rg --location $location --tags "Demo-Vnet"
+
+az deployment group create \
+    --name demo1 \
+    --resource-group $rg  \
+    --template-file ./az-303-vnet-demo.json \
+    --parameters ./az-303-vnet-demo.parameters.json
+
+az network vnet list -o table

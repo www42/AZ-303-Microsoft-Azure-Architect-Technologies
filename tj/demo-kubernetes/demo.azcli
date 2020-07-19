@@ -1,0 +1,67 @@
+# -------------------
+rg="Kubernetes-RG"
+location="westeurope"
+cluster="Jeri1"
+tag="KubernetesPOC"
+# -------------------
+cd tj/demo-kubernetes
+# -------------------
+
+az account show --query '{"Subscription Name":name,"Subscription Id":id,"Tenant Id":tenantId,"User name":user.name}'
+az group list -o table
+
+az group create --name $rg --location $location --tags $tag
+sp=$(az ad sp create-for-rbac  --name $cluster --skip-assignment true)
+appId=$(echo $sp | jq .appId | tr -d '"')
+password=$(echo $sp | jq .password | tr -d '"')
+
+az aks get-versions --location $location --output table
+version="1.17.7"
+
+az aks create --name $cluster \
+              --resource-group $rg \
+              --kubernetes-version $version \
+              --enable-addons http_application_routing \
+              --service-principal $appId \
+              --client-secret $password \
+              --vm-set-type VirtualMachineScaleSets \
+              --node-vm-size Standard_B2s \
+              --network-plugin azure \
+              --load-balancer-sku standard \
+              --node-count 2 
+
+#              --enable-cluster-autoscaler \
+#              --min-count 1 \
+#              --max-count 5
+
+az aks list --output table
+
+az aks get-credentials --name $cluster --resource-group $rg
+kubectl config get-contexts
+kubectl config current-context
+kubectl cluster-info
+
+kubectl get nodes
+kubectl get pods
+kubectl get pods --all-namespaces
+
+kubectl api-resources 
+kubectl get deployments
+kubectl get services
+
+kubectl apply -f  azure-vote.yaml
+
+kubectl get deployments
+kubectl get services
+kubectl get pods
+
+kubectl get nodes
+az aks scale --name $cluster --resource-group $rg --node-count 1 
+
+
+
+
+# Clean up
+# -------------------
+az group delete --name $rg --yes --no-wait
+az ad sp delete --id $appId
