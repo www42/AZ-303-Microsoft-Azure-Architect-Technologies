@@ -707,7 +707,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate back to the **az30301c-vmss** virtual machine scale set blade. 
 
-1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30301c-vmss | Extensions** blade, select the **customScriptExtension** entry, and then, on the **Extensions** blade, select **+ Add**.
+1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30301c-vmss | Extensions** blade, select **+ Add** and then, select the **customScriptExtension** entry on the **Extensions** blade.
 
 1. On the **New resource** blade, select **Custom Script Extension** and then select **Create**.
 
