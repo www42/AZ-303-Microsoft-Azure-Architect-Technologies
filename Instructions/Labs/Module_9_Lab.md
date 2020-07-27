@@ -88,12 +88,12 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30308a-labRG** |
-    | Host Public IP Address Name | **az30308a-hv-vm-pip** |
-    | Virtual Network Name | **az30308a-hv-vnet** |
-    | Host Network Interface1Name | **az30308a-hv-vm-nic1** |
-    | Host Network Interface2Name | **az30308a-hv-vm-nic2** |
-    | Host Virtual Machine Name | **az30308a-hv-vm** |
+    | Resource group | **az30307a-labRG** |
+    | Host Public IP Address Name | **az30307a-hv-vm-pip** |
+    | Virtual Network Name | **az30307a-hv-vnet** |
+    | Host Network Interface1Name | **az30307a-hv-vm-nic1** |
+    | Host Network Interface2Name | **az30307a-hv-vm-nic2** |
+    | Host Virtual Machine Name | **az30307a-hv-vm** |
     | Host Admin Username | **Student** |
     | Host Admin Password | **Pa55w.rd1234** |
 
@@ -269,7 +269,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **az30307c-labRG** |
+    | Resource group | **az30307c-labRG** |
     | Name | **az30307c-test-vnet** |
     | Region | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
 
