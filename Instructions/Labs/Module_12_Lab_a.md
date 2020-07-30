@@ -186,6 +186,10 @@ The main tasks for this exercise are as follows:
 
 1. In the Cloud Shell pane, use the built-in editor to edit the index.html file by replacing the line:
 
+      ```sh
+   code index.html
+   ```
+   
    ```html
    <h1>Azure App Service - Sample Static HTML Site</h1>
    ```
