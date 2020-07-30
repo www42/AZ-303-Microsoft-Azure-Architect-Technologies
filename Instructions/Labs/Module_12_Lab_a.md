@@ -184,12 +184,13 @@ The main tasks for this exercise are as follows:
    cd ~/az30305a1/html-docs-hello-world
    ```
 
-1. In the Cloud Shell pane, use the built-in editor to edit the index.html file by replacing the line:
+1. In the Cloud Shell pane, run the following to start the built-in editor:
 
-      ```sh
+   ```sh
    code index.html
    ```
-   
+1. In the Cloud Shell pane, in the code editor, replace the line:
+
    ```html
    <h1>Azure App Service - Sample Static HTML Site</h1>
    ```
