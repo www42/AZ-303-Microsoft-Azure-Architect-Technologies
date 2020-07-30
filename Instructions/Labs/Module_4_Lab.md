@@ -133,7 +133,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, search for and select **Network Watcher** and, on the **Network Watcher** blade, select **Topology**.
 
-1. On the **Network Watcher | Topology** blade, specify the following settings:
+1. On the **Network Watcher \| Topology** blade, specify the following settings:
 
     | Setting | Value | 
     | --- | --- |
@@ -145,7 +145,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Network Watcher** blade, select **Effective security rules**.
 
-1. On the **Network Watcher | Effective security rules** blade, specify the following settings:
+1. On the **Network Watcher \| Effective security rules** blade, specify the following settings:
 
     | Setting | Value | 
     | --- | --- |
@@ -160,7 +160,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: The intention is to verify the proximity (in the networking terms) of the two Azure VMs in the same availability set.
 
-1. On the **Network Watcher | Connection troubleshoot** blade, specify the following settings and select **Check** :
+1. On the **Network Watcher \| Connection troubleshoot** blade, specify the following settings and select **Check** :
 
     | Setting | Value | 
     | --- | --- |
@@ -194,7 +194,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
-1. On the **az30301a-lb** blade, select the **Load balancing rules** entry and, on the **az30301a-lb | Load balancing rules** blade, select the **az303001a-lbruletcp80** entry representing the load balancing rule handling HTTP traffic. 
+1. On the **az30301a-lb** blade, select the **Load balancing rules** entry and, on the **az30301a-lb \| Load balancing rules** blade, select the **az303001a-lbruletcp80** entry representing the load balancing rule handling HTTP traffic. 
 
 1. On the **az303001a-lbruletcp80** blade, in the **Session persistence** drop-down list, select **Client IP** and then select **Save**.
 
@@ -297,7 +297,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, search for and select **Network Watcher** and, on the **Network Watcher** blade, select **Topology**.
 
-1. On the **Network Watcher | Topology** blade, specify the following settings:
+1. On the **Network Watcher \| Topology** blade, specify the following settings:
 
     | Setting | Value | 
     | --- | --- |
@@ -311,7 +311,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Network Watcher** blade, select **Effective security rules**.
 
-1. On the **Network Watcher | Effective security rules** blade, specify the following settings:
+1. On the **Network Watcher \| Effective security rules** blade, specify the following settings:
 
     | Setting | Value | 
     | --- | --- |
@@ -328,7 +328,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: The intention is to verify the proximity (in the networking terms) of the two Azure VMs in the same availability set.
 
-1. On the **Network Watcher | Connection troubleshoot** blade, specify the following settings and select **Check** :
+1. On the **Network Watcher \| Connection troubleshoot** blade, specify the following settings and select **Check** :
 
     | Setting | Value | 
     | --- | --- |
@@ -366,7 +366,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
-1. On the **az30301b-lb** blade, select the **Load balancing rules** entry and, on the **az30301b-lb | Load balancing rules** blade, select the **az303001b-lbruletcp80** entry representing the load balancing rule handling HTTP traffic. 
+1. On the **az30301b-lb** blade, select the **Load balancing rules** entry and, on the **az30301b-lb \| Load balancing rules** blade, select the **az303001b-lbruletcp80** entry representing the load balancing rule handling HTTP traffic. 
 
 1. On the **az303001b-lbruletcp80** blade, in the **Session persistence** drop-down list, select **Client IP** and then select **Save**.
 
@@ -398,11 +398,11 @@ The main tasks for this exercise are as follows:
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt and close the Cloud Shell pane.
 
-1. On the **az30301b-lb** blade, select the **Load balancing rules** entry and, on the **az30301b-lb | Load balancing rules** blade, select the **az303001b-lbruletcp80** entry representing the load balancing rule handling HTTP traffic. 
+1. On the **az30301b-lb** blade, select the **Load balancing rules** entry and, on the **az30301b-lb \| Load balancing rules** blade, select the **az303001b-lbruletcp80** entry representing the load balancing rule handling HTTP traffic. 
 
 1. On the **az303001b-lbruletcp80** blade, in the **Create implicit outbound rules** section, select **No**, and then select **Save**.
 
-1. Navigate back to the **az30301b-lb** blade, select the **Outbound rules** entry, and on the **az30301b-lb | Outbound rules** blade, select **+ Add**.
+1. Navigate back to the **az30301b-lb** blade, select the **Outbound rules** entry, and on the **az30301b-lb \| Outbound rules** blade, select **+ Add**.
 
 1. On the **Add outbound rule** blade, specify the following settings and select **Add** (leave all other settings with their default values):
 
@@ -419,7 +419,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate to the **az30301b-labRG** resource group blade, in the list of resources, select the **az30301b-vm0** virtual machine entry, and on the **az30301b-vm0** blade, in the **Operations** blade, select **Run command**.
 
-1. On the **az30301b-vm0 | Run command** blade, select **RunPowerShellScript**. 
+1. On the **az30301b-vm0 \| Run command** blade, select **RunPowerShellScript**. 
 
 1. On the **Run Command Script** blade, in the **PowerShell Script** text box, type the following and select **Run**.
 
@@ -497,7 +497,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, search for and select **Network Watcher** and, on the **Network Watcher** blade, select **Topology**.
 
-1. On the **Network Watcher | Topology** blade, specify the following settings:
+1. On the **Network Watcher \| Topology** blade, specify the following settings:
 
     | Setting | Value | 
     | --- | --- |
@@ -517,9 +517,9 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Unlike Azure VMs, individual instances of Azure VM scale sets deploy into separate fault domains, including instances deployed into the same zone. In addition, they support 5 fault domains (unlike Azure VMs, which can use up to 3 fault domains). 
 
-1. On the **az30301c-vmss** blade, select **Instances**, on the **az30301c-vmss | Instances** blade, select the first instance, and identify its availability zone by reviewing the value of the **Location** property. 
+1. On the **az30301c-vmss** blade, select **Instances**, on the **az30301c-vmss \| Instances** blade, select the first instance, and identify its availability zone by reviewing the value of the **Location** property. 
 
-1. Navigate back to the **az30301c-vmss | Instances** blade, select the second instance, and identify its availability zone by reviewing the value of the **Location** property. 
+1. Navigate back to the **az30301c-vmss \| Instances** blade, select the second instance, and identify its availability zone by reviewing the value of the **Location** property. 
 
     > **Note**: Verify that each instance resides in a different availability zone.
 
@@ -535,7 +535,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
-1. On the **az30301c-appgw** blade, select the **HTTP settings** entry and, on the **az30301c-appgw | HTTP settings** blade, select the **appGwBackentHttpSettings** entry representing the load balancing rule handling HTTP traffic. 
+1. On the **az30301c-appgw** blade, select the **HTTP settings** entry and, on the **az30301c-appgw \| HTTP settings** blade, select the **appGwBackentHttpSettings** entry representing the load balancing rule handling HTTP traffic. 
 
 1. On the **appGwBackentHttpSettings** blade, review the existing settings without making any changes and note that you can enable **Cookie-based affinity**.
 
@@ -556,7 +556,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate to the **az30301c-labRG** resource group blade, in the list of resources, select the **az30301c-vmss** virtual machine scale set entry, and on the **az30301c-vmss** blade, select **Scaling**. 
 
-1. On the **az30301c-vmss | Scaling** blade, select the **Custom autoscale** option.
+1. On the **az30301c-vmss \| Scaling** blade, select the **Custom autoscale** option.
 
 1. In the **Custom autoscale** section, specify the following settings (leave others with their default values):
 
@@ -589,7 +589,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: These values are selected strictly for lab purposes to trigger scaling as soon as possible. For guidance regarding Azure VM Scale Set scaling, refer to [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview) . 
 
-1. Back on the **az30301c-vmss | Scaling** blade, select **+ Add a rule**.
+1. Back on the **az30301c-vmss \| Scaling** blade, select **+ Add a rule**.
 
 1. On the **Scale rule** blade, specify the following settings and select **Add** (leave others with their default values):
 
@@ -627,7 +627,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30301c-vmss** blade, select the **Instances** entry and verify that the number of instances has increased.
 
-    > **Note**: You might need to refresh the **az30301c-vmss | Instances** blade.
+    > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
 
     > **Note**: You might see the number of instances increasing by 2 (rather than 1). This is expected as long as the final number of running instances is 3. 
 
@@ -639,11 +639,11 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30301c-vmss** blade, select the **Instances** entry and verify that the number of instances has decreased to 2.
 
-    > **Note**: You might need to refresh the **az30301c-vmss | Instances** blade.
+    > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
 
 1. On the **az30301c-vmss** blade, select **Scaling**. 
 
-1. On the **az30301c-vmss | Scaling** blade, select the **Manual scale** option and select **Save**.
+1. On the **az30301c-vmss \| Scaling** blade, select the **Manual scale** option and select **Save**.
 
     > **Note**: This will prevent any undesired autoscaling during the next exercise. 
 
@@ -663,9 +663,9 @@ The main tasks for this exercise are as follows:
 
 1. In the list of available sizes, select any available size other than currently configured and select **Resize**.
 
-1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss | Instances** blade, observe the process of replacing existing instances with new ones of the desired size.
+1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss \| Instances** blade, observe the process of replacing existing instances with new ones of the desired size.
 
-    > **Note**: You might need to refresh the **az30301c-vmss | Instances** blade.
+    > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
 
 1. Wait until the instances are updated and running.
 
@@ -680,11 +680,11 @@ The main tasks for this exercise are as follows:
     | Size | **32** |
     | Storage account type | **Standard HDD** |
 
-1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss | Instances** blade, observe the process of updating the existing instances.
+1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss \| Instances** blade, observe the process of updating the existing instances.
 
     > **Note**: The disk attached in the previous step is a raw disks. Before it can be used, it is necessary to create a partition, format it, and mount it. To accomplish this, you will deploy a PowerShell script to Azure VM scale set instances via the Custom Script extension. First, however, you will need to remove it.
 
-1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30301c-vmss | Extensions** blade, select the **customScriptExtension** entry, and then, on the **Extensions** blade, select **Uninstall**.
+1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select the **customScriptExtension** entry, and then, on the **Extensions** blade, select **Uninstall**.
 
     > **Note**: Wait for uninstallation to complete.
 
@@ -707,7 +707,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate back to the **az30301c-vmss** virtual machine scale set blade. 
 
-1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30301c-vmss | Extensions** blade, select **+ Add** and then, select the **customScriptExtension** entry on the **Extensions** blade.
+1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select **+ Add** and then, select the **customScriptExtension** entry on the **Extensions** blade.
 
 1. On the **New resource** blade, select **Custom Script Extension** and then select **Create**.
 
@@ -719,7 +719,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss | Instances** blade, observe the process of updating existing instances.
 
-    > **Note**: You might need to refresh the **az30301c-vmss | Instances** blade.
+    > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
 
 
 #### Task 3: Remove Azure resources deployed in the exercise
