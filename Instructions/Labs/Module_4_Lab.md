@@ -96,6 +96,12 @@ The main tasks for this exercise are as follows:
 1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
 
     >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
+    
+1. From the Cloud Shell pane, run the following to register the Microsoft.Insights resource provider in preparation for the later exercises in this lab:
+
+   ```sh
+   az provider register --namespace 'Microsoft.Insights'
+   ```
 
 1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ303\\AllFiles\\Labs\\01\\azuredeploy30301suba.json** into the Cloud Shell home directory.
 
