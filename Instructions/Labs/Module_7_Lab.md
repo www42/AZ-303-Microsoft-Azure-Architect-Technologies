@@ -279,3 +279,7 @@ The main tasks for this exercise are as follows:
    ```
 
 1. Close the Cloud Shell pane.
+
+1. In the Azure portal, navigate to the **Users** blade of the Azure Active Directory tenant associated with your Azure subscription.
+
+1. In the list of user accounts, select the entry representing the **az30311aaduser1** user account, select the ellipsis icon in the toolbar, select **Delete user** and select **Yes** when prompted to confirm.  
