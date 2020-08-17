@@ -234,7 +234,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Allowed services | **Blob** |
-    | Allowed service types | **Object** |
+    | Allowed resource types | **Object** |
     | Allowed permissions | **Read**, **Create** |
     | Blob versioning permissions | disabled |
     | Start | 24 hours before the current time in your current time zone | 
