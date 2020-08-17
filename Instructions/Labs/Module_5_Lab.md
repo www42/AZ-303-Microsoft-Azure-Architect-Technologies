@@ -187,7 +187,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Allowed services | **Blob** |
-    | Allowed service types | **Services** and **Container** |
+    | Allowed resource types | **Service** and **Container** |
     | Allowed permissions | **Read**, **List** and **Create** |
     | Blob versioning permissions | disabled |
     | Start | 24 hours before the current time in your current time zone | 
