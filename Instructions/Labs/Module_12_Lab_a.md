@@ -264,7 +264,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate back to the blade displaying the deployment slots of the App Service web app.
 
-1. In the Azure portal, on the blade displaying the App Service web app deployment slots, in the row displaying the production slot, set the value in the **TRAFFIC %** column to 50. This will automatically set the value of **TRAFFIC %** in the row representing the production slot to 50.
+1. In the Azure portal, on the blade displaying the App Service web app deployment slots, in the row displaying the staging slot, set the value in the **TRAFFIC %** column to 50. This will automatically set the value of **TRAFFIC %** in the row representing the production slot to 50.
 
 1. On the blade displaying the App Service web app deployment slots, select **Save**. 
 
