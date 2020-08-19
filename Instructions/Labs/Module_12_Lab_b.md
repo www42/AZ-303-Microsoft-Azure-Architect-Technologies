@@ -197,9 +197,9 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate back to the blade displaying the Azure Function app you created in the previous task.
 
-1. On the Azure Function app blade, select **Switch to classic experience | Continue to classic experience
+1. On the Azure Function app blade, select **Switch to classic experience \| Continue to classic experience**.
 
-1. On the Azure Function app blade, select **Monitor** entry in the **Developer** section. 
+1. On the Azure Function app blade, select **Monitor** entry. 
 
 1. Note a single event entry representing uploading of the blob. Select the entry to view the **Invocation Details** blade.
 
