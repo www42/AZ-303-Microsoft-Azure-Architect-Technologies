@@ -259,10 +259,12 @@ The main tasks for this exercise are as follows:
 
 1. Restart the virtual machine and verify that the action completed successfully.
 
+1. Close the in-private web browser session.
+
 
 #### Task 3: Remove Azure resources deployed in the lab
 
-1. From the lab computer, in the browser window displaying the Azure portal, start a PowerShell session within the Cloud Shell pane.
+1. From the lab computer, in the existing browser window displaying the Azure portal, start a PowerShell session within the Cloud Shell pane.
 
 1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
 
