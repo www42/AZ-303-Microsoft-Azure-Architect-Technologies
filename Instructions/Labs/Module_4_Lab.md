@@ -744,4 +744,10 @@ The main tasks for this exercise are as follows:
    az group list --query "[?starts_with(name,'az30301c-')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
    ```
 
+1. From the Cloud Shell pane, run the following to delete the file you uploaded earlier in this lab
+
+   ```sh
+   rm ~/azuredeploy30301suba.json
+   ```
+
 1. Close the Cloud Shell pane.
