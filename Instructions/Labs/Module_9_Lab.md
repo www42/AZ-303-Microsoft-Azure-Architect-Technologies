@@ -97,7 +97,7 @@ The main tasks for this exercise are as follows:
     | Host Admin Username | **Student** |
     | Host Admin Password | **Pa55w.rd1234** |
 
-1. On the **Hyper-V Host Virtual Machine with nested VMs** blade, select the checkbox **I agree to the terms and conditions above** and select **Purchase**.
+1. On the **Hyper-V Host Virtual Machine with nested VMs** blade, select **Review + create** and then select **Create**.
 
     > **Note**: Wait for the deployment to complete. The deployment might take about 10 minutes.
 
