@@ -199,7 +199,7 @@ The main tasks for this exercise are as follows:
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | the name of a new resource group **az30307b-labRG** |
     | Vault name | **az30307b-rsvault** |
-    | Location | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
+    | Location | the name of the Azure region different from the one into which you deployed the virtual machine earlier in this lab |
 
 1. On the **Review + create** tab of the **Create Recovery Services vault** blade, select **Create**:
 
@@ -247,7 +247,7 @@ The main tasks for this exercise are as follows:
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | the name of a new resource group **az30307c-labRG** |
     | Name | **az30307c-dr-vnet** |
-    | Region | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
+    | Region | the name of the Azure region into which you deployed the Recovery Services vault in the previous exercise of this lab |
 
 1. On the **IP addresses** tab of the **Create virtual network** blade, in the **IPv4 address space** text box, type **10.7.0.0/16** and select **+ Add subnet**.
 
@@ -271,7 +271,7 @@ The main tasks for this exercise are as follows:
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | **az30307c-labRG** |
     | Name | **az30307c-test-vnet** |
-    | Region | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
+    | Region | the name of the Azure region into which you deployed the Recovery Services vault in the previous exercise of this lab |
 
 1. On the **IP addresses** tab of the **Create virtual network** blade, in the **IPv4 address space** text box, type **10.7.0.0/16** and select **+ Add subnet**.
 
