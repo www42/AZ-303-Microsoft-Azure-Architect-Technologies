@@ -309,41 +309,29 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az30307a-hv-vm**, in the Azure portal, on the **az30307b-rsvault** blade, in the **Getting started** section, select **Site Recovery**
 
-1. On the **az30307b-rsvault | Site Recovery** blade, in the **For on-premises machines** section, select **Prepare infrastructure**. 
+1. On the **az30307b-rsvault \| Site Recovery** blade, in the **Hyper-V machines to Azure** section, select **1. Prepare infrastructure**. 
 
-1. On the **Protection goal** blade, select the following settings (leave others with their default values) and select **OK**:
+1. On the **Deployment planning** tab of the **Prepare infrastructure** blade, in the **Deployment planning completed?** drop-down list, select **Yes, I have done it** and select **Next**.
 
-    | Setting | Value | 
-    | --- | --- |
-    | Where are your machines located | **On-premises** |
-    | Where do you want to replicate your machines to | **Azure** |
-    | Are you performing a migration? | **No** |
-    | Are your virtual machines virtualized | **Yes, with Hyper-V** |
-    | Are you using System Center VMM to manage your Hyper-V hosts? | **No** |
+1. On the **Source settings** tab of the **Prepare infrastructure** blade, next to the **Are you Using System Center VMM to manage Hyper-V hosts** label, select the **No** option.
 
-1. On the **Deployment planning** blade, in the drop-down list labeled **Have you completed deployment planning?**, select **Yes, I have done it** and select **OK**:
+1. On the **Source settings** tab of the **Prepare infrastructure** blade, select the **Add Hyper-V site** link, on the **Create Hyper-V Site** blade, in the **Name** text box, type **az30307b Hyper-V site** and select **OK**:
 
-1. On the **Prepare source** blade, select **+ Hyper-V Site**. 
+1. On the **Source settings** tab of the **Prepare infrastructure** blade, select the **Add Hyper-V server** link. 
 
-1. On the **Create Hyper-V Site** blade, in the **Name** text box, type **az30307b Hyper-V site** and select **OK**:
+1. On the **Add Server** blade, select the **Download** link in step 3 of the procedure for adding on-premises Hyper-V hosts in order to download the Microsoft Azure Site Recovery Provider.
 
-1. Back on the **Prepare source** blade, select **+ Hyper-V Server**. 
-
-    >**Note**: You might have to refresh the browser page. 
-
-1. On the **Add Server** blade, select the **Download** link in step 3 of the procedure for registering on-premises Hyper-V hosts in order to download the Microsoft Azure Site Recovery Provider.
-
-1. When prompted, launch **AzureSiteRecoveryProvider.exe**. This will start the **Azure Site Recovery Provider Setup (Hyper-V server)** wizard.
+1. When prompted, in the browser window, select **Run** to launch **AzureSiteRecoveryProvider.exe**. This will start the **Azure Site Recovery Provider Setup (Hyper-V server)** wizard.
 
 1. On the **Microsoft Update** page, select **Off** and select **Next**.
 
 1. On the **Provider installation** page, select **Install**.
 
-1. Switch to the Azure portal and, on the **Add Server** blade, select the **Download** button in step 4 of the procedure for registering on-premises Hyper-V hosts in order to download the vault registration key. When prompted, save the registration key in the **Downloads** folder.
+1. Switch to the Azure portal and, on the **Add Server** blade, select the **Download** button in step 4 of the procedure for registering on-premises Hyper-V hosts in order to download the vault registration key. When prompted, select **Save** to save the vault credentials file in the **Downloads** folder.
 
-1. Switch to the **Provider installation** page and select **Register**. This will start the **Microsoft Azure Site Recovery Registration Wizard**.
+1. Switch to the **Provider installation** wizard window and select **Register**. This will start the **Microsoft Azure Site Recovery Registration Wizard**.
 
-1. On the **Vault Settings** page of the **Microsoft Azure Site Recovery Registration Wizard**, select **Browse**, navigate to the **Downloads** folder, select the vault credentials file, and select **Open**.
+1. On the **Vault Settings** page of the **Microsoft Azure Site Recovery Registration Wizard**, select **Browse**, in the **Open** window, navigate to the **Downloads** folder, select the vault credentials file, and select **Open**.
 
 1. Back on the **Vault Settings** page of the **Microsoft Azure Site Recovery Registration Wizard**, select **Next**.
 
@@ -351,68 +339,72 @@ The main tasks for this exercise are as follows:
 
 1. On the **Registration** page of the **Microsoft Azure Site Recovery Registration Wizard**, select **Finish**.
 
-1. Refresh the page displaying the Azure portal and repeat the sequence of steps until you reach the **Prepare source** blade. Ensure that both Hyper-V site and Hyper-V server have been added and select **OK**.
+1. Switch back to the Internet Explorer window displaying the Azure portal and refresh the page. When prompted, select **Leave the page**.
 
-1. On the **Target** blade, select **+ Storage account** and select the storage account you created in the first task of this exercise.
+1. Back on the **az30307b-rsvault | Site Recovery** blade, in the **Hyper-V machines to Azure** section, select **1. Prepare infrastructure**. 
 
-1. On the **Target** blade, select **+ Network** and select the virtual network you created in the first task of this exercise.
+1. On the **Deployment planning** tab of the **Prepare infrastructure** blade, in the **Deployment planning completed?** drop-down list, select **Yes, I have done it** and select **Next**.
 
-1. On the **Replication policy** blade, select **+ Create and Associate**. 
+1. On the **Source settings** tab of the **Prepare infrastructure** blade, next to the **Are you Using System Center VMM to manage Hyper-V hosts** label, select the **No** option.
 
-1. On the **Create and Associate** blade, specify the following settings (leave others with their default values) and select **OK**:
+1. Verify that the **Hyper-V site** and **Hyper-V servers** settings are set correctly and select **Next**. 
+
+1. On the **Target settings** tab of the **Prepare infrastructure** blade, accept the default settings and select **Next**.
+
+1. On the **Replication policy** tab of the **Prepare infrastructure** blade, select **Create new policy and associate**. 
+
+1. On the **Create and associate policy** blade, specify the following settings (leave others with their default values) and select **OK**:
 
     | Setting | Value |
     | --- | --- |
-    | Name | **az30307c replication policy** |
+    | Name | **az30307b replication policy** |
     | Copy frequency | **30 seconds** |
 
-1. Back on the **Prepare infrastructure** blade, select **OK**.
+1. Back on the **Replication policy** tab of the **Prepare infrastructure** blade, wait until the site has been associated with the policy and select **Next**.
 
-1. Back on the **az30307b-rsvault | Site Recovery** blade, in the **For on-premises machines and Azure VMs** section, select **Step 1: Replicate Application**. 
+1. On the **Review** tab of the **Prepare infrastructure** blade, select **Prepare**.
 
-1. On the **Source** blade, accept the default settings and select **OK**.
+1. On the **az30307b-rsvault \| Site Recovery** blade, in the **Hyper-V machines to Azure** section, select **2. Enable replication**. 
 
-    >**Note**: If the **OK** un-select and re-select items in the drop-down lists.
+1. On the **Source environment** tab of the **Enable replication** blade, in the **Source location** drop-down list, select **az30307b Hyper-V site** and select **Next**.
 
-1. On the **Target** blade, specify the following settings (leave others with their default values) and select **OK**:
+1. On the **Target environment** tab of the **Enable replication** blade, specify the following settings (leave others with their default values) and select **Next**:
 
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Post-failover resource group | **az30307c-labRG** |
+    | Post-failover resource group | **az30307b-rg3** |
     | Post-failover deployment model | **Resource Manager** |
     | Storage account | the name of the storage account you created in the first task of this exercise |
     | Azure network | Configure now for selected machines |
-    | Post-failover Azure network | **az30307c-dr-vnet** |
+    | Post-failover Azure network | **az30307b-dr-vnet** |
     | Subnet | **subnet0 (10.7.0.0/24)** |
 
-1. On the **Select virtual machines** blade, select **az30307a-vm1** and select **OK**:
+1. On the **Virtual machine selection** tab of the **Enable replication** blade, select the **az30307a-vm1** checkbox and select **Next**.
 
-1. On the **Configure properties** blade, in the **Defaults** row and **OS type** column, select **Windows** from the drop-down list and select **OK**:
+1. On the **Replication settings** tab of the **Enable replication** blade, in the **Defaults** row and **OS type** column, select **Windows** from the drop-down list and select **Next**.
 
-1. On the **Configure replication settings** blade, accept the default settings and select **OK**:
+1. On the **Replication policy** tab of the **Enable replication** blade, accept the default settings and select **Next**.
 
-1. Back on the **Enable replication** blade, select **Enable replication**.
-
+1. On the **Review** tab of the **Enable replication** blade, select **Enable replication**.
 
 #### Task 3: Review Azure VM replication settings
 
-1. In the Azure portal, navigate back to the **az30307b-rsvault** blade and select **Replicated items**. 
+1. In the Azure portal, back on the **az30307b-rsvault \| Site Recovery** blade, in the vertical menu, select **Replicated items**. 
 
-1. On the **az30307b-rsvault | Replicated items** blade, ensure that there is an entry representing the **az30307a-vm1** virtual machine and verify that its **Replication Health** is listed as **Healthy** and that its **Status** is listed as **Enabling protection**.
+1. On the **az30307b-rsvault \| Replicated items** blade, ensure that there is an entry representing the **az30307a-vm1** virtual machine and verify that its **Replication Health** is listed as **Healthy** and that its **Status** is listed as either **Enabling protection** or displaying a current percentage of synchronization progress.
 
-    > **Note**: You might need to wait a few minutes until the **az30307a-vm1** entry appears on the **az30307b-rsvault - Replicated items** blade.
+   > **Note**: You might need to wait a few minutes until the **az30307a-vm1** entry appears on the **az30307b-rsvault \| Replicated items** blade.
 
-1. On the **az30307b-rsvault - Replicated items** blade, select the **az30307a-vm1** entry.
+1. On the **az30307b-rsvault \| Replicated items** blade, select the **az30307a-vm1** entry.
 
 1. On the **az30307a-vm1** replicated items blade, review the **Health and status**, **Failover readiness**, **Latest recovery points**, and **Infrastructure view** sections. Note the **Planned Failover**, **Failover** and **Test Failover** toolbar icons.
 
-1. Wait until the status changes to **Protected**. This might take additional 15 minutes.
+   > **Note**: Wait until the status changes to **Protected**. This might take additional 15 minutes. You will need to refresh the browser page for the status to be updated.
 
-1. On the **az30307a-vm1** replicated items blade, select **Latest recovery points** and review **Latest crash-consistent** and **Latest app-consistent** recovery points.
+1. On the **az30307a-vm1** replicated items blade, select **Latest recovery points** and review **Latest crash-consistent** and **Latest app-consistent** recovery points. 
 
-
-#### Task 3: Perform a failover of the Hyper-V virtual machine
+#### Task 4: Perform a failover of the Hyper-V virtual machine
 
 1. Within the Remote Desktop session to **az30307a-vm0**, in the browser window displaying the Azure portal, on the **az30307a-vm1** replicated items blade, select **Test failover**. 
 
