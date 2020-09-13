@@ -95,7 +95,7 @@ The main tasks for this exercise are as follows:
 
 1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
+    > **Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
     
 1. From the Cloud Shell pane, run the following to register the Microsoft.Insights resource provider in preparation for the later exercises in this lab:
 
@@ -162,15 +162,10 @@ The main tasks for this exercise are as follows:
 
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP.  
 
-    >**Note**: There is two option to see effective security rules, If you unable to see **Effective security rules** from **Network Watcher** blade 
-    - In the Azure Portal search for **Network interface**, open **az30301a-nic0** resource blade and then goto **Effective security rules**, you would able to see all the network security group rules on **az30301a-nic0** interface.
-    - In the Azure Portal search for the **Network security group**, open **az30301a-web-nsg** resource blade and then under **Support + troubleshooting** open **Effective security rules** blade, specify the following settings, then you should able to see all the network security rule associated with **az30301a-nic0** interface.  
-
-        | Setting | Value | 
-        | --- | --- |
-        | Virtual machine | **az30301a-vm0** |
-        | Network interface | **az30301a-nic0** |
-        
+    > **Note**: Alternatively, you can view **Effective security rules** from:
+    - the **az30301a-nic0** network interface blade.
+    - the **az30301a-web-nsg** network security group blade 
+    
 1. On the **Network Watcher** blade, select **Connection troubleshoot**.
 
     > **Note**: The intention is to verify the proximity (in the networking terms) of the two Azure VMs in the same availability set.
@@ -338,14 +333,10 @@ The main tasks for this exercise are as follows:
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP. 
 
     > **Note**: This listing is also practically identical to the one you viewed in the previous exercise, with network-level protection implemented by using a network security group associated with the subnet to which both Azure VMs are connected. Keep in mind, however, that the network security group is, in this case, required for the HTTP and RDP traffic to reach the backend pool Azure VMs, due to the usage of the Azure Load Balancer Standard SKU (NSGs are optional when using the Basic SKU).  
-    >**Note**: There is two option to see effective security rules, If you unable to see **Effective security rules** from **Network Watcher** blade 
-    - In the Azure Portal search for **Network interface**, open **az30301b-nic0** resource blade and then goto **Effective security rules**, you would able to see all the network security group rules on **az30301b-nic0** interface.
-    - In the Azure Portal search for the **Network security group**, open **az30301b-web-nsg** resource blade and then under **Support + troubleshooting** open **Effective security rules** blade, specify the following settings, then you should able to see all the network security rule associated with **az30301b-nic0** interface.  
-
-        | Setting | Value | 
-        | --- | --- |
-        | Virtual machine | **az30301b-vm0** |
-        | Network interface | **az30301b-nic0** |
+    
+    > **Note**: Alternatively, you can view **Effective security rules** from:
+    - the **az30301a-nic0** network interface blade.
+    - the **az30301a-web-nsg** network security group blade 
 
 1. On the **Network Watcher** blade, select **Connection troubleshoot**.
 
