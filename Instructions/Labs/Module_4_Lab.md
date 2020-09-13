@@ -160,8 +160,17 @@ The main tasks for this exercise are as follows:
     | Virtual machine | **az30301a-vm0** |
     | Network interface | **az30301a-nic0** |
 
-1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP. 
+1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP.  
 
+    >**Note**: There is two option to see effetive security rules, If you unable to see **Effective security rules** from **Network Watcher** blade 
+    - In the Azure Portal search for **Network interface**, open **az30301a-nic0** resource blade and then goto **Effective security rules**, you would able to see all the network security group rules on **az30301a-nic0** interface.
+    - In the Azure Portal search for the **Network security group**, open **az30301a-web-nsg** resource blade and then under **Support + troubleshooting** open **Effective security rules** blade, specify the following settings, then you should able to see all the network security rule associated with **az30301a-nic0** interface.  
+
+        | Setting | Value | 
+        | --- | --- |
+        | Virtual machine | **az30301a-vm0** |
+        | Network interface | **az30301a-nic0** |
+        
 1. On the **Network Watcher** blade, select **Connection troubleshoot**.
 
     > **Note**: The intention is to verify the proximity (in the networking terms) of the two Azure VMs in the same availability set.
