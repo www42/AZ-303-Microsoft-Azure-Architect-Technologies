@@ -162,7 +162,7 @@ The main tasks for this exercise are as follows:
 
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP.  
 
-    >**Note**: There is two option to see effetive security rules, If you unable to see **Effective security rules** from **Network Watcher** blade 
+    >**Note**: There is two option to see effective security rules, If you unable to see **Effective security rules** from **Network Watcher** blade 
     - In the Azure Portal search for **Network interface**, open **az30301a-nic0** resource blade and then goto **Effective security rules**, you would able to see all the network security group rules on **az30301a-nic0** interface.
     - In the Azure Portal search for the **Network security group**, open **az30301a-web-nsg** resource blade and then under **Support + troubleshooting** open **Effective security rules** blade, specify the following settings, then you should able to see all the network security rule associated with **az30301a-nic0** interface.  
 
@@ -323,7 +323,7 @@ The main tasks for this exercise are as follows:
 1. Review the resulting topology diagram, noting the connections between the public IP address, load balancer, and the network adapters of Azure VMs in its backend pool.
 
     > **Note**: This diagram is practically identical to the one you viewed in the previous exercise, since, despite being in different zones (and effectively Azure data centers), the Azure VMs reside on the same subnet.
-
+    
 1. On the **Network Watcher** blade, select **Effective security rules**.
 
 1. On the **Network Watcher \| Effective security rules** blade, specify the following settings:
@@ -337,7 +337,15 @@ The main tasks for this exercise are as follows:
 
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP. 
 
-    > **Note**: This listing is also practically identical to the one you viewed in the previous exercise, with network-level protection implemented by using a network security group associated with the subnet to which both Azure VMs are connected. Keep in mind, however, that the network security group is, in this case, required for the HTTP and RDP traffic to reach the backend pool Azure VMs, due to the usage of the Azure Load Balancer Standard SKU (NSGs are optional when using the Basic SKU).
+    > **Note**: This listing is also practically identical to the one you viewed in the previous exercise, with network-level protection implemented by using a network security group associated with the subnet to which both Azure VMs are connected. Keep in mind, however, that the network security group is, in this case, required for the HTTP and RDP traffic to reach the backend pool Azure VMs, due to the usage of the Azure Load Balancer Standard SKU (NSGs are optional when using the Basic SKU).  
+    >**Note**: There is two option to see effective security rules, If you unable to see **Effective security rules** from **Network Watcher** blade 
+    - In the Azure Portal search for **Network interface**, open **az30301b-nic0** resource blade and then goto **Effective security rules**, you would able to see all the network security group rules on **az30301b-nic0** interface.
+    - In the Azure Portal search for the **Network security group**, open **az30301b-web-nsg** resource blade and then under **Support + troubleshooting** open **Effective security rules** blade, specify the following settings, then you should able to see all the network security rule associated with **az30301b-nic0** interface.  
+
+        | Setting | Value | 
+        | --- | --- |
+        | Virtual machine | **az30301b-vm0** |
+        | Network interface | **az30301b-nic0** |
 
 1. On the **Network Watcher** blade, select **Connection troubleshoot**.
 
