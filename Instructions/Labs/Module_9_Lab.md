@@ -373,7 +373,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Post-failover resource group | **az30307b-rg3** |
+    | Post-failover resource group | **az30307b-labRG** |
     | Post-failover deployment model | **Resource Manager** |
     | Storage account | the name of the storage account you created in the first task of this exercise |
     | Azure network | Configure now for selected machines |
