@@ -99,7 +99,7 @@ The main tasks for this exercise are as follows:
     
 1. From the Cloud Shell pane, run the following to register the Microsoft.Insights resource provider in preparation for the later exercises in this lab:
 
-   ```sh
+   ```Bash
    az provider register --namespace 'Microsoft.Insights'
    ```
 
@@ -107,8 +107,11 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to create a resource group (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer):
 
-   ```sh
+   ```Bash
    LOCATION='<Azure region>'
+   ```
+   
+   ```Bash
    az deployment sub create \
    --location $LOCATION \
    --template-file azuredeploy30301suba.json \
@@ -123,7 +126,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to deploy an Azure Load Balancer Basic with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core into the same availability set:
 
-   ```sh
+   ```Bash
    az deployment group create \
    --resource-group az30301a-labRG \
    --template-file azuredeploy30301rga.json \
@@ -198,7 +201,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
-   ```sh
+   ```Bash
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
 
@@ -210,7 +213,7 @@ The main tasks for this exercise are as follows:
 
 1. Wait for the update to complete and, from the Cloud Shell pane, re-run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer without session persistence (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
-   ```sh
+   ```Bash
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
 
@@ -220,7 +223,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to test Remote Desktop connectivity via NAT to the first Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
-   ```sh
+   ```Bash
    curl -v telnet://<lb_IP_address>:33890
    ```
 
@@ -228,7 +231,7 @@ The main tasks for this exercise are as follows:
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt and run the following to test Remote Desktop connectivity via NAT to the second Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
-   ```sh
+   ```Bash
    curl -v telnet://<lb_IP_address>:33891
    ```
 
@@ -241,7 +244,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
 
-   ```sh
+   ```Bash
    az group list --query "[?starts_with(name,'az30301a-')]".name --output tsv
    ```
 
@@ -277,8 +280,11 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to create a resource groups (replace the `<Azure region>` placeholder with the name of the Azure region that is available in your subscription and which is closest to the location of your lab computer):
 
-   ```sh
+   ```Bash
    LOCATION='<Azure region>'
+   ```
+   
+   ```Bash
    az deployment sub create \
    --location $LOCATION \
    --template-file azuredeploy30301subb.json \
@@ -291,7 +297,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to deploy an Azure Load Balancer Standard with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core across two availability zones:
 
-   ```sh
+   ```Bash
    az deployment group create \
    --resource-group az30301b-labRG \
    --template-file azuredeploy30301rgb.json \
@@ -374,7 +380,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
-   ```sh
+   ```Bash
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
 
@@ -386,7 +392,7 @@ The main tasks for this exercise are as follows:
 
 1. Wait for the update to complete and, from the Cloud Shell pane, re-run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer without session persistence (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
-   ```sh
+   ```Bash
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
 
@@ -396,7 +402,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to test Remote Desktop connectivity via NAT to the first Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
-   ```sh
+   ```Bash
    curl -v telnet://<lb_IP_address>:33890
    ```
 
@@ -404,7 +410,7 @@ The main tasks for this exercise are as follows:
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt and run the following to test Remote Desktop connectivity via NAT to the second Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
-   ```sh
+   ```Bash
    curl -v telnet://<lb_IP_address>:33891
    ```
 
@@ -452,7 +458,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
 
-   ```sh
+   ```Bash
    az group list --query "[?starts_with(name,'az30301b-')]".name --output tsv
    ```
 
@@ -460,7 +466,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
 
-   ```sh
+   ```Bash
    az group list --query "[?starts_with(name,'az30301b-')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
    ```
 
@@ -488,7 +494,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to create a resource groups (replace the `<Azure region>` placeholder with the name of the Azure region that is available in your subscription and which is closest to the location of your lab computer):
 
-   ```sh
+   ```Bash
    az deployment sub create --location '<Azure region>' --template-file azuredeploy30301subc.json --parameters rgName=az30301c-labRG rgLocation='<Azure region>'
    ```
 
@@ -543,8 +549,8 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to test load balancing of HTTP traffic to the Azure VM Scale Set instances in the backend pool of the Azure Application Gateway (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the gateway you identified earlier):
 
-   ```sh
-   for i in {1..4}; do curl <lb_IP_address>; done
+   ```Bash
+   for i in {1..4}; do curl <appgw_IPaddress>; done
    ```
 
     > **Note**: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
@@ -632,7 +638,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to trigger autoscaling of the Azure VM Scale Set instances in the backend pool of the Azure Application Gateway (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the gateway you identified earlier):
 
-   ```sh
+   ```Bash
    for (( ; ; )); do curl -s <lb_IP_address>?[1-10]; done
    ```
 1. In the Azure portal, on the **az30301c-vmss** blade, review the **CPU (average)** chart and verify that the CPU utilization of the Application Gateway increased sufficiently to trigger scaling out.
@@ -740,7 +746,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
 
-   ```sh
+   ```Bash
    az group list --query "[?starts_with(name,'az30301c-')]".name --output tsv
    ```
 
@@ -748,14 +754,8 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
 
-   ```sh
+   ```Bash
    az group list --query "[?starts_with(name,'az30301c-')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
    ```
-
-1. From the Cloud Shell pane, run the following to delete the file you uploaded earlier in this lab
-
-   ```sh
-   rm ~/azuredeploy30301suba.json
-   ```
-
+   
 1. Close the Cloud Shell pane.
