@@ -78,6 +78,9 @@ The main tasks for this exercise are as follows:
 
    ```powershell
    $location = '<Azure region>'
+   ```
+   
+   ```powershell
    New-AzSubscriptionDeployment `
      -Location $location `
      -Name az30302subaDeployment `
