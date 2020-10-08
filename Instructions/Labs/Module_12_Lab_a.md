@@ -304,7 +304,7 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to remove the **az30305a1** directory:
 
    ```sh
-   rm -r ~/az30305a1
+   rm -r -f ~/az30305a1
    ```
    
 1. Close the Cloud Shell pane.
