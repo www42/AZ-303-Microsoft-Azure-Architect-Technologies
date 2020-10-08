@@ -373,11 +373,11 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Post-failover resource group | **az30307b-labRG** |
+    | Post-failover resource group | **az30307c-labRG** |
     | Post-failover deployment model | **Resource Manager** |
     | Storage account | the name of the storage account you created in the first task of this exercise |
     | Azure network | Configure now for selected machines |
-    | Post-failover Azure network | **az30307b-dr-vnet** |
+    | Post-failover Azure network | **az30307c-dr-vnet** |
     | Subnet | **subnet0 (10.7.0.0/24)** |
 
 1. On the **Virtual machine selection** tab of the **Enable replication** blade, select the **az30307a-vm1** checkbox and select **Next**.
