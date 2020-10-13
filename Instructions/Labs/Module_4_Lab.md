@@ -420,7 +420,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30301b-lb** blade, select the **Load balancing rules** entry and, on the **az30301b-lb \| Load balancing rules** blade, select the **az303001b-lbruletcp80** entry representing the load balancing rule handling HTTP traffic. 
 
-1. On the **az303001b-lbruletcp80** blade, in the **Create implicit outbound rules** section, select **No**, and then select **Save**.
+1. On the **az303001b-lbruletcp80** blade, in the **Outbound source network address translation (SNAT)** section, select **(Recommended) Use outbound rules to provide backend pool memebers access to the internet**, and then select **Save**.
 
 1. Navigate back to the **az30301b-lb** blade, select the **Outbound rules** entry, and on the **az30301b-lb \| Outbound rules** blade, select **+ Add**.
 
