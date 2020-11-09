@@ -241,7 +241,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Role | **Virtual Machine Operator (Custom)** |
-    | Assign access to | **Azure AD user, group, or service principal** |
+    | Assign access to | **User, group, or service principal** |
     | Select | **az30311aaduser1** |
 
 
