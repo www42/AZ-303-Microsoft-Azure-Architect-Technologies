@@ -78,6 +78,9 @@ The main tasks for this exercise are as follows:
 
    ```powershell
    $location = '<Azure region>'
+   ```
+   
+   ```powershell
    New-AzSubscriptionDeployment `
      -Location $location `
      -Name az30302subaDeployment `
@@ -187,7 +190,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Allowed services | **Blob** |
-    | Allowed service types | **Services** and **Container** |
+    | Allowed resource types | **Service** and **Container** |
     | Allowed permissions | **Read**, **List** and **Create** |
     | Blob versioning permissions | disabled |
     | Start | 24 hours before the current time in your current time zone | 
@@ -234,7 +237,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Allowed services | **Blob** |
-    | Allowed service types | **Object** |
+    | Allowed resource types | **Object** |
     | Allowed permissions | **Read**, **Create** |
     | Blob versioning permissions | disabled |
     | Start | 24 hours before the current time in your current time zone | 
@@ -489,3 +492,7 @@ The main tasks for this exercise are as follows:
    ```
 
 1. Close the Cloud Shell pane.
+
+1. In the Azure portal, navigate to the **Users** blade of the Azure Active Directory tenant associated with your Azure subscription.
+
+1. In the list of user accounts, select the entry representing the **az30302auser1** user account, select the ellipsis icon in the toolbar, select **Delete user** and select **Yes** when prompted to confirm.  

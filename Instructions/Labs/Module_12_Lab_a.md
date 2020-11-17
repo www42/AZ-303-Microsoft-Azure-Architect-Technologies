@@ -184,7 +184,12 @@ The main tasks for this exercise are as follows:
    cd ~/az30305a1/html-docs-hello-world
    ```
 
-1. In the Cloud Shell pane, use the built-in editor to edit the index.html file by replacing the line:
+1. In the Cloud Shell pane, run the following to start the built-in editor:
+
+   ```sh
+   code index.html
+   ```
+1. In the Cloud Shell pane, in the code editor, replace the line:
 
    ```html
    <h1>Azure App Service - Sample Static HTML Site</h1>
@@ -259,7 +264,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate back to the blade displaying the deployment slots of the App Service web app.
 
-1. In the Azure portal, on the blade displaying the App Service web app deployment slots, in the row displaying the production slot, set the value in the **TRAFFIC %** column to 50. This will automatically set the value of **TRAFFIC %** in the row representing the production slot to 50.
+1. In the Azure portal, on the blade displaying the App Service web app deployment slots, in the row displaying the staging slot, set the value in the **TRAFFIC %** column to 50. This will automatically set the value of **TRAFFIC %** in the row representing the production slot to 50.
 
 1. On the blade displaying the App Service web app deployment slots, select **Save**. 
 
@@ -296,4 +301,10 @@ The main tasks for this exercise are as follows:
    az group list --query "[?starts_with(name,'az30305')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
    ```
 
+1. From the Cloud Shell pane, run the following to remove the **az30305a1** directory:
+
+   ```sh
+   rm -r -f ~/az30305a1
+   ```
+   
 1. Close the Cloud Shell pane.
