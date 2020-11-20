@@ -1,7 +1,7 @@
 ---
 lab:
-    title: '12A: Implementing an Azure App Service Web App with a Staging Slot'
-    module: 'Module 12: Implement an Application Infrastructure'
+    title: '14A: Implementing an Azure App Service Web App with a Staging Slot'
+    module: 'Module 14: Implement an Application Infrastructure'
 ---
 
 # Lab: Implementing an Azure App Service Web App with a Staging Slot
@@ -64,14 +64,14 @@ None
 
     >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
 
-1. From the Cloud Shell pane, run the following to create a new directory named **az30305a1** and set it as your current directory:
+1. From the Cloud Shell pane, run the following to create a new directory named **az30314a1** and set it as your current directory:
 
    ```sh
-   mkdir az30305a1
-   cd ~/az30305a1/
+   mkdir az30314a1
+   cd ~/az30314a1/
    ```
 
-1. From the Cloud Shell pane, run the following to clone a sample app repository to the **az30305a1** directory:
+1. From the Cloud Shell pane, run the following to clone a sample app repository to the **az30314a1** directory:
 
    ```sh
    REPO=https://github.com/Azure-Samples/html-docs-hello-world.git
@@ -82,8 +82,8 @@ None
 1. From the Cloud Shell pane, run the following to configure a deployment user:
 
    ```sh
-   USERNAME=az30305user$RANDOM
-   PASSWORD=az30305pass$RANDOM
+   USERNAME=az30314user$RANDOM
+   PASSWORD=az30314pass$RANDOM
    az webapp deployment user set --user-name $USERNAME --password $PASSWORD 
    echo $USERNAME
    echo $PASSWORD
@@ -96,21 +96,21 @@ None
 
    ```sh
    LOCATION='<location>'
-   RGNAME='az30305a-labRG'
+   RGNAME='az30314a-labRG'
    az group create --location $LOCATION --resource-group $RGNAME
    ```
 
 1. From the Cloud Shell pane, run the following to create a new App Service plan:
 
    ```sh
-   SPNAME=az30305asp$LOCATION$RANDOM
+   SPNAME=az30314asp$LOCATION$RANDOM
    az appservice plan create --name $SPNAME --resource-group $RGNAME --location $LOCATION --sku S1
    ```
 
 1. From the Cloud Shell pane, run the following to create a new, Git-enabled App Service web app:
 
    ```sh
-   WEBAPPNAME=az30305$RANDOM$RANDOM
+   WEBAPPNAME=az30314$RANDOM$RANDOM
    az webapp create --name $WEBAPPNAME --resource-group $RGNAME --plan $SPNAME --deployment-local-git
    ```
 
@@ -178,10 +178,10 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
-1. From the Cloud Shell pane, run the following to ensure that the current set **az30305a1/html-docs-hello-world** as the current directory:
+1. From the Cloud Shell pane, run the following to ensure that the current set **az30314a1/html-docs-hello-world** as the current directory:
 
    ```sh
-   cd ~/az30305a1/html-docs-hello-world
+   cd ~/az30314a1/html-docs-hello-world
    ```
 
 1. In the Cloud Shell pane, run the following to start the built-in editor:
@@ -206,8 +206,8 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to specify the required global git configuration settings:
 
    ```sh
-   git config --global user.email "user@az30305.com"
-   git config --global user.name "user az30305"
+   git config --global user.email "user@az30314.com"
+   git config --global user.name "user az30314"
    ```
 
 1. From the Cloud Shell pane, run the following to commit the change you applied locally to the master branch:
@@ -220,8 +220,8 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to retrieve the publishing URL of the newly created staging slot of the App Service web app:
 
    ```sh
-   RGNAME='az30305a-labRG'
-   WEBAPPNAME=$(az webapp list --resource-group $RGNAME --query "[?starts_with(name,'az30305')]".name --output tsv)
+   RGNAME='az30314a-labRG'
+   WEBAPPNAME=$(az webapp list --resource-group $RGNAME --query "[?starts_with(name,'az30314')]".name --output tsv)
    SLOTNAME='staging'
    URLSTAGING=$(az webapp deployment list-publishing-credentials --name $WEBAPPNAME --slot $SLOTNAME --resource-group $RGNAME --query scmUri --output tsv)
    ```
@@ -273,8 +273,8 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to verify set the variables representing  the name of the target web app and its distribution group:
 
    ```sh
-   RGNAME='az30305a-labRG'
-   WEBAPPNAME=$(az webapp list --resource-group $RGNAME --query "[?starts_with(name,'az30305')]".name --output tsv)
+   RGNAME='az30314a-labRG'
+   WEBAPPNAME=$(az webapp list --resource-group $RGNAME --query "[?starts_with(name,'az30314')]".name --output tsv)
    ```
 
 1. From the Cloud Shell pane, run the following several times to identify the traffic distribution between the two slots.
@@ -290,7 +290,7 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
 
    ```sh
-   az group list --query "[?starts_with(name,'az30305')]".name --output tsv
+   az group list --query "[?starts_with(name,'az30314')]".name --output tsv
    ```
 
     > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
@@ -298,13 +298,13 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
 
    ```sh
-   az group list --query "[?starts_with(name,'az30305')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
+   az group list --query "[?starts_with(name,'az30314')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
    ```
 
-1. From the Cloud Shell pane, run the following to remove the **az30305a1** directory:
+1. From the Cloud Shell pane, run the following to remove the **az30314a1** directory:
 
    ```sh
-   rm -r -f ~/az30305a1
+   rm -r -f ~/az30314a1
    ```
    
 1. Close the Cloud Shell pane.
