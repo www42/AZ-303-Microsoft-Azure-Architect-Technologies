@@ -358,7 +358,7 @@ The main tasks for this exercise are as follows:
 
     >**Note**: Write down the name of the storage account. You will need it in the next task.
 
-1. On the **Add role assignment** blade, in the **Role** drop-down list, select **Storage Blob Data Owner**, ensure that the **Assign access to** drop-down list entry is set to **Azure AD user, group, or service principal**, select both your user account and the user account you created in the previous task from the list displayed below the **Select** text box, and select **Save**.
+1. On the **Add role assignment** blade, in the **Role** drop-down list, select **Storage Blob Data Owner**, ensure that the **Assign access to** drop-down list entry is set to **User, group, or service principal**, select both your user account and the user account you created in the previous task from the list displayed below the **Select** text box, and select **Save**.
 
 1. Navigate back to the **container1** blade and verify that you can see the content of the container.
 
