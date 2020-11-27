@@ -144,9 +144,9 @@ The main tasks for this exercise are as follows:
 
 1. On the Azure Function app blade, select **Functions** and then, select **+ Add**.
 
-1. On the **New Function** blade, select **Azure Blob Storage trigger** template.
+1. On the **Add Function** blade, select **Azure Blob Storage trigger** template.
 
-1. On the **New Function** blade, specify the following and select **Create Function** to create a new function within the Azure function:
+1. On the **Add Function** blade, specify the following and select **Add** to create a new function within the Azure function:
 
     | Setting | Value |
     | --- | --- |
