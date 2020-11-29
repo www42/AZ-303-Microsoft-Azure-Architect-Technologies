@@ -1,7 +1,7 @@
 ---
 lab:
-    title: '7: Managing Azure Role-Based Access Control'
-    module: 'Module 7: Implement and Manage Azure Governance'
+    title: '10: Managing Azure Role-Based Access Control'
+    module: 'Module 10: Implement and Manage Azure Governance'
 ---
 
 # Lab: Managing Azure Role-Based Access Control
@@ -38,13 +38,13 @@ Estimated Time: 60 minutes
 
 ## Lab Files
 
--  \\\\AZ303\\AllFiles\\Labs\\11\\azuredeploy30311suba.json
+-  \\\\AZ303\\AllFiles\\Labs\\10\\azuredeploy30310suba.json
 
--  \\\\AZ303\\AllFiles\\Labs\\11\\azuredeploy30311rga.json
+-  \\\\AZ303\\AllFiles\\Labs\\10\\azuredeploy30310rga.json
 
--  \\\\AZ303\\AllFiles\\Labs\\11\\azuredeploy30311rga.parameters.json
+-  \\\\AZ303\\AllFiles\\Labs\\10\\azuredeploy30310rga.parameters.json
 
--  \\\\AZ303\\AllFiles\\Labs\\11\\roledefinition30311.json
+-  \\\\AZ303\\AllFiles\\Labs\\10\\roledefinition30310.json
 
 
 ## Instructions
@@ -68,7 +68,7 @@ The main tasks for this exercise are as follows:
 
     >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
 
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ303\\AllFiles\Labs\\11\\azuredeploy30311suba.json** into the Cloud Shell home directory.
+1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ303\\AllFiles\Labs\\10\\azuredeploy30310suba.json** into the Cloud Shell home directory.
 
 1. From the Cloud Shell pane, run the following to create a resource groups (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer):
 
@@ -76,26 +76,26 @@ The main tasks for this exercise are as follows:
    $location = '<Azure region>'
    New-AzSubscriptionDeployment `
      -Location $location `
-     -Name az30311subaDeployment `
-     -TemplateFile $HOME/azuredeploy30311suba.json `
+     -Name az30310subaDeployment `
+     -TemplateFile $HOME/azuredeploy30310suba.json `
      -rgLocation $location `
-     -rgName 'az30311a-labRG'
+     -rgName 'az30310a-labRG'
    ```
 
       > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ303\\AllFiles\Labs\\11\\azuredeploy30311rga.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ303\\AllFiles\Labs\\10\\azuredeploy30310rga.json**.
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\\\AZ303\\AllFilesLabs\\11\\azuredeploy30311rga.parameters.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\\\AZ303\\AllFilesLabs\\10\\azuredeploy30310rga.parameters.json**.
 
 1. From the Cloud Shell pane, run the following to deploy a Azure VM running Windows Server 2019 that you will be using in this lab:
 
    ```powershell
    New-AzResourceGroupDeployment `
-     -Name az30311rgaDeployment `
-     -ResourceGroupName 'az30311a-labRG' `
-     -TemplateFile $HOME/azuredeploy30311rga.json `
-     -TemplateParameterFile $HOME/azuredeploy30311rga.parameters.json `
+     -Name az30310rgaDeployment `
+     -ResourceGroupName 'az30310a-labRG' `
+     -TemplateFile $HOME/azuredeploy30310rga.json `
+     -TemplateParameterFile $HOME/azuredeploy30310rga.parameters.json `
      -AsJob
    ```
 
@@ -122,13 +122,13 @@ The main tasks for this exercise are as follows:
    $passwordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
    $passwordProfile.Password = 'Pa55w.rd1234'
    $passwordProfile.ForceChangePasswordNextLogin = $false
-   New-AzureADUser -AccountEnabled $true -DisplayName 'az30311aaduser1' -PasswordProfile $passwordProfile -MailNickName 'az30311aaduser1' -UserPrincipalName "az30311aaduser1@$domainName"
+   New-AzureADUser -AccountEnabled $true -DisplayName 'az30310aaduser1' -PasswordProfile $passwordProfile -MailNickName 'az30310aaduser1' -UserPrincipalName "az30310aaduser1@$domainName"
    ```
 
 1. From the Cloud Shell pane, run the following to identify the user principal name of the newly created Azure AD user:
 
    ```powershell
-   (Get-AzureADUser -Filter "MailNickName eq 'az30311aaduser1'").UserPrincipalName
+   (Get-AzureADUser -Filter "MailNickName eq 'az30310aaduser1'").UserPrincipalName
    ```
 
       > **Note**: Record the user principal name of the newly created Azure AD user. You will need it later in this lab.
@@ -147,11 +147,11 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Identify actions to delegate via RBAC
 
-1. In the Azure portal, navigate to the **az30311a-labRG** blade.
+1. In the Azure portal, navigate to the **az30310a-labRG** blade.
 
-1. On the **az30311a-labRG** blade, select **Access Control (IAM)**.
+1. On the **az30310a-labRG** blade, select **Access Control (IAM)**.
 
-1. On the **az30311a-labRG - Access Control (IAM)** blade, select **Roles**.
+1. On the **az30310a-labRG - Access Control (IAM)** blade, select **Roles**.
 
 1. On the **Roles** blade, select **Owner**.
 
@@ -166,7 +166,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Create a custom RBAC role in an Azure AD tenant
 
-1. On the lab computer, open the file **\\\\AZ303\\AllFiles\\Labs\\11\\roledefinition30311.json** and review its content:
+1. On the lab computer, open the file **\\\\AZ303\\AllFiles\\Labs\\10\\roledefinition30310.json** and review its content:
 
    ```json
    {
@@ -189,25 +189,25 @@ The main tasks for this exercise are as follows:
 
 1. On the lab computer, in the browser window displaying the Azure portal, start a **PowerShell** session within the **Cloud Shell**. 
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ303\\AllFiles\\Labs\\11\\roledefinition30311.json** into the home directory.
+1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ303\\AllFiles\\Labs\\10\\roledefinition30310.json** into the home directory.
 
 1. From the Cloud Shell pane, run the following to replace the `SUBSCRIPTION_ID` placeholder with the ID value of the Azure subscription:
 
    ```powershell
    $subscription_id = (Get-AzContext).Subscription.id
-   (Get-Content -Path $HOME/roledefinition30311.json) -Replace 'SUBSCRIPTION_ID', "$subscription_id" | Set-Content -Path $HOME/roledefinition30311.json
+   (Get-Content -Path $HOME/roledefinition30310.json) -Replace 'SUBSCRIPTION_ID', "$subscription_id" | Set-Content -Path $HOME/roledefinition30310.json
    ```
 
 1. From the Cloud Shell pane, run the following to verify that the `SUBSCRIPTION_ID` placeholder was replaced with the ID value of the Azure subscription:
 
    ```powershell
-   Get-Content -Path $HOME/roledefinition30311.json
+   Get-Content -Path $HOME/roledefinition30310.json
    ```
 
 1. From the Cloud Shell pane, run the following to create the custom role definition:
 
    ```powershell
-   New-AzRoleDefinition -InputFile $HOME/roledefinition30311.json
+   New-AzRoleDefinition -InputFile $HOME/roledefinition30310.json
    ```
 
 1. From the Cloud Shell pane, run the following to verify that the role was created successfully:
@@ -230,44 +230,46 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create an RBAC role assignment
  
-1. In the Azure portal, navigate to the **az30311a-labRG** blade.
+1. In the Azure portal, navigate to the **az30310a-labRG** blade.
 
-1. On the **az30311a-labRG** blade, select **Access Control (IAM)**.
+1. On the **az30310a-labRG** blade, select **Access Control (IAM)**.
 
-1. On the **az30311a-labRG - Access Control (IAM)** blade, select **+ Add** and select the **Add role assignment** option.
+1. On the **az30310a-labRG - Access Control (IAM)** blade, select **+ Add** and select the **Add role assignment** option.
 
 1. On the **Add role assignment** blade, specify the following settings (leave others with their existing values) and select **Save**:
 
     | Setting | Value | 
     | --- | --- |
     | Role | **Virtual Machine Operator (Custom)** |
-    | Assign access to | **Azure AD user, group, or service principal** |
-    | Select | **az30311aaduser1** |
+    | Assign access to | **User, group, or service principal** |
+    | Select | **az30310aaduser1** |
 
 
 #### Task 2: Test the RBAC role assignment
 
-1. From the lab computer, start a new in-private web browser session, navigate to the [Azure portal](https://portal.azure.com), and sign in by using the **az30311aaduser1** user account with the **Pa55w.rd1234** password.
+1. From the lab computer, start a new in-private web browser session, navigate to the [Azure portal](https://portal.azure.com), and sign in by using the **az30310aaduser1** user account with the **Pa55w.rd1234** password.
 
-    > **Note**: Make sure to use the user principal name of the **az30311aaduser1** user account, which you recorded earlier in this lab.
+    > **Note**: Make sure to use the user principal name of the **az30310aaduser1** user account, which you recorded earlier in this lab.
 
 1. In the Azure portal, navigate to the **Resource groups** blade. Note that you are not able to see any resource groups. 
 
-1. In the Azure portal, navigate to the **All resources** blade. Note that you are able to see only the **az30311a-vm0** and its managed disk.
+1. In the Azure portal, navigate to the **All resources** blade. Note that you are able to see only the **az30310a-vm0** and its managed disk.
 
-1. In the Azure portal, navigate to the **az30311a-vm0** blade. Try stopping the virtual machine. Review the error message in the notification area and note that this action failed because the current user is not authorized to carry it out.
+1. In the Azure portal, navigate to the **az30310a-vm0** blade. Try stopping the virtual machine. Review the error message in the notification area and note that this action failed because the current user is not authorized to carry it out.
 
 1. Restart the virtual machine and verify that the action completed successfully.
+
+1. Close the in-private web browser session.
 
 
 #### Task 3: Remove Azure resources deployed in the lab
 
-1. From the lab computer, in the browser window displaying the Azure portal, start a PowerShell session within the Cloud Shell pane.
+1. From the lab computer, in the existing browser window displaying the Azure portal, start a PowerShell session within the Cloud Shell pane.
 
 1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
 
    ```powershell
-   Get-AzResourceGroup -Name 'az30311*'
+   Get-AzResourceGroup -Name 'az30310*'
    ```
 
     > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
@@ -275,7 +277,15 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
 
    ```powershell
-   Get-AzResourceGroup -Name 'az30311*' | Remove-AzResourceGroup -Force -AsJob
+   Get-AzResourceGroup -Name 'az30310*' | Remove-AzResourceGroup -Force -AsJob
    ```
 
 1. Close the Cloud Shell pane.
+
+1. In the Azure portal, navigate to the **Users** blade of the Azure Active Directory tenant associated with your Azure subscription.
+
+1. In the list of user accounts, select the entry representing the **az30310aaduser1** user account, select the ellipsis icon in the toolbar, select **Delete user** and select **Yes** when prompted to confirm.  
+
+1. In the Azure portal, navigate to the blade displaying properties of your Azure subscriptions, select the **Access control (IAM)** entry, and then select **Roles**.
+
+1. In the list of roles, select the **Virtual Machine Operator (Custom)** entry, select **Remove** and, when prompted to confirm, select **Yes**.
