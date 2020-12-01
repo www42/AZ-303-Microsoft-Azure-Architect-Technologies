@@ -1,0 +1,109 @@
+# ===========================
+# Exercise 1  Aval Set + LB
+# ===========================
+
+cd Allfiles/Labs/05
+
+# Task 1 Create
+# -------------
+az provider register --namespace 'Microsoft.Insights'
+LOCATION='eastus2'
+
+# Create resource group
+az deployment sub create \
+    --location $LOCATION \
+    --template-file azuredeploy30305suba.json \
+    --parameters rgName=az30305a-labRG rgLocation=$LOCATION
+
+# Create Avail set, LB, etc
+az deployment group create \
+    --resource-group az30305a-labRG \
+    --template-file azuredeploy30305rga.json \
+    --parameters @azuredeploy30305rga.parameters.json
+
+# Task 2 Analyze
+# --------------
+# Portal --> Nework Watcher ...
+
+# Session persistence
+pip=13.68.22.126
+for i in {1..4}; do curl $pip; done
+
+# Inbound NAT rules
+curl -v telnet://$pip:33890
+curl -v telnet://$pip:33891
+
+# Task 3 Remove RG
+# ----------------
+az group list --query "[?starts_with(name,'az30305a-')]".name --output tsv
+#az group list --query "[?starts_with(name,'az30305a-')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
+
+
+# ===============================
+# Exercise 2  VMs in zones + LB
+# ===============================
+
+# Task 1 Create
+# -------------
+LOCATION='westus2'
+
+# Create resource group
+az deployment sub create \
+    --location $LOCATION \
+    --template-file azuredeploy30305subb.json \
+    --parameters rgName=az30305b-labRG rgLocation=$LOCATION
+
+# Create VMs, LB, etc
+az deployment group create \
+    --resource-group az30305b-labRG \
+    --template-file azuredeploy30305rgb.json \
+    --parameters @azuredeploy30305rgb.parameters.json
+
+# Task 2 Analyze
+# --------------
+# Portal --> Network Watcher ...  (wie in Exercise 1)
+
+# Session persistance
+pip=20.69.64.65
+for i in {1..4}; do curl $pip; done
+
+# Inbound NAT rules
+curl -v telnet://$pip:33890
+curl -v telnet://$pip:33891
+
+# Outbound NAT rule (Es ist ein Standard LB, Exercise 1 war Basic LB)
+# Portal --> Add Outbound NAT Rule
+# Portal --> VM0 --> Run Command --> (Invoke-RestMethod -Uri "http://ipinfo.io").IP  --> public IP LB
+
+
+# Task 3 Remove RG
+# ----------------
+az group list --query "[?starts_with(name,'az30305b-')]".name --output tsv
+#az group list --query "[?starts_with(name,'az30305b-')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
+
+
+
+# ==============================
+# Exercise 3  Scale Set + AppGW
+# ==============================
+
+# Task 1 Create
+# -------------
+LOCATION='westeurope'
+
+# Create resource group
+az deployment sub create \
+    --location $LOCATION \
+    --template-file azuredeploy30305subc.json \
+    --parameters rgName=az30305c-labRG rgLocation=$LOCATION
+
+# Create VMSS, AppGW, etc
+az deployment group create \
+    --resource-group az30305c-labRG \
+    --template-file azuredeploy30305rgc.json \
+    --parameters @azuredeploy30305rgc.parameters.json
+
+# Task 2 Analyze
+# --------------
+pip=20.73.129.35
+for i in {1..4}; do curl $pip; done
