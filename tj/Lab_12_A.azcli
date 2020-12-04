@@ -1,0 +1,92 @@
+# ==================================================
+# Exercise 1: Implement an Azure App Service web app
+# ==================================================
+
+# Task 1: Deploy an Azure App Service web app
+# --------------------------------------------
+mkdir az30314a1
+cd az30314a1/
+
+REPO=https://github.com/Azure-Samples/html-docs-hello-world.git
+git clone $REPO
+cd html-docs-hello-world
+
+USERNAME=az30314user$RANDOM
+PASSWORD=az30314pass$RANDOM
+az webapp deployment user set --user-name $USERNAME --password $PASSWORD 
+echo $USERNAME
+echo $PASSWORD
+
+# Resource group
+LOCATION='westeurope'
+RGNAME='az30314a-labRG'
+az group create --location $LOCATION --resource-group $RGNAME
+
+# Service plan
+SPNAME=az30314asp$LOCATION$RANDOM
+az appservice plan create --name $SPNAME --resource-group $RGNAME --location $LOCATION --sku S1
+
+# Web app
+WEBAPPNAME=az30314$RANDOM$RANDOM
+az webapp create --name $WEBAPPNAME --resource-group $RGNAME --plan $SPNAME --deployment-local-git
+
+URL=$(az webapp deployment list-publishing-credentials --name $WEBAPPNAME --resource-group $RGNAME --query scmUri --output tsv)
+echo $URL
+
+git remote add azure $URL
+git remote -v
+
+git push azure master
+
+az webapp show --name $WEBAPPNAME --resource-group $RGNAME --query defaultHostName --output tsv
+
+
+# Task 2: Create an App Service web app deployment slot
+# -----------------------------------------------------
+
+# Portal --> Add Deployment slot
+
+
+# =======================================================
+# Exercise 2: Manage App Service web app deployment slots
+# =======================================================
+
+# Task 1: Deploy web content to an App Service web app staging slot
+# ------------------------------------------------------------------
+
+pwd
+#cd az30314a1/html-docs-hello-world
+
+code index.html
+# change  <h1>Azure App Service - Sample Static HTML Site</h1>
+
+git config --global user.email "user@az30314.com"
+git config --global user.name "user az30314"
+
+git add index.html
+git commit -m 'v1.0.1'
+
+RGNAME='az30314a-labRG'
+WEBAPPNAME=$(az webapp list --resource-group $RGNAME --query "[?starts_with(name,'az30314')]".name --output tsv)
+echo $WEBAPPNAME
+SLOTNAME='staging'
+URLSTAGING=$(az webapp deployment list-publishing-credentials --name $WEBAPPNAME --slot $SLOTNAME --resource-group $RGNAME --query scmUri --output tsv)
+echo $URLSTAGING
+
+git remote add azure-staging $URLSTAGING
+git push azure-staging master
+
+
+# Task 2: Swap App Service web app staging slots
+# -----------------------------------------------
+# Portal --> swap slots
+
+
+
+# Task 3: Configure A/B testing
+# -----------------------------
+# Portal --> 50%   50%
+RGNAME='az30314a-labRG'
+WEBAPPNAME=$(az webapp list --resource-group $RGNAME --query "[?starts_with(name,'az30314')]".name --output tsv)
+
+curl -H 'Cache-Control: no-cache' https://$WEBAPPNAME.azurewebsites.net --stderr - | grep '<h1>Azure App Service'
