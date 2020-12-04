@@ -69,10 +69,14 @@ az aks update --name $clusterName --attach-acr $acrName --resource-group $rgName
 image=$acrName.azurecr.io/my/nginx:v1
 kubectl run mypod --image=$image --port=80
 kubectl get pods
-kubectl expose mypod test --port=80 --type=LoadBalancer
+kubectl expose pod mypod  --port=80 --type=LoadBalancer
 
 
 # Test
 kubectl get service
 
 # Note the public ip address. Try public ip address in a browser.
+
+
+# Clean up
+az group delete --name $rgName --yes --no-wait
