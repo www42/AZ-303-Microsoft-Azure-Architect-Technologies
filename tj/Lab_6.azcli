@@ -1,0 +1,38 @@
+# Exercise 0 Prepare
+# ------------------
+
+# Create RG
+$location = 'westeurope'
+New-AzSubscriptionDeployment `
+  -Location $location `
+  -Name az30306subaDeployment `
+  -TemplateFile azuredeploy30306suba.json `
+  -rgLocation $location `
+  -rgName 'az30306a-labRG'
+
+# Create VM
+New-AzResourceGroupDeployment `
+  -Name az30306rgaDeployment `
+  -ResourceGroupName 'az30306a-labRG' `
+  -TemplateFile C:\git\az-303\Allfiles\Labs\06\azuredeploy30306rga.json `
+  -TemplateParameterFile C:\git\az-303\Allfiles\Labs\06\azuredeploy30306rga.parameters.json `
+  -AsJob
+
+Get-Job 7
+Receive-Job 7
+
+
+
+# Exercise 1
+#
+# Task 5
+
+cd tj
+
+New-Item -Path './az30306ablob.html'
+Set-Content './az30306ablob.html' '<h3>Hello from az30306ablob via SAS</h3>'
+
+$storageAccountName = (Get-AzStorageAccount -ResourceGroupName 'az30306a-labRG')[0].StorageAccountName
+
+
+azcopy cp './az30306ablob.html' "https://$storageAccountName.blob.core.windows.net/container1/az30306ablob.html?sv=2019-12-12&ss=b&srt=sco&sp=rlc&se=2020-12-03T21:19:13Z&st=2020-12-01T13:19:13Z&spr=https&sig=KLz%2FtC4N%2FofDWriy7VKprTLtzlnVGXPhi0FSVRxpiKY%3D"

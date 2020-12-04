@@ -1,0 +1,78 @@
+# Lab AKS and friends
+# --------------------
+
+# Start CloudShell (Bash)
+
+# Create resource group
+location='westeurope'
+rgName='Container-RG'
+az group create --name $rgName  --location $location
+
+
+# Create Kubernetes cluster (it takes some time)
+clusterName='myCluster'
+az aks create --name $clusterName \
+              --resource-group $rgName \
+              --kubernetes-version 1.18.10 \
+              --enable-addons http_application_routing \
+              --vm-set-type VirtualMachineScaleSets \
+              --node-vm-size Standard_B2s \
+              --node-count 2 \
+              --network-plugin azure \
+              --load-balancer-sku standard \
+              --generate-ssh-keys \
+              --no-wait
+
+# It take some time to create the cluster. Go on.
+
+
+# Create Azure Container Registry (ACR)
+acrName=myacr$RANDOM
+az acr create --name $acrName --resource-group $rgName --sku Basic
+az acr list --resource-group $rgName \
+    --query "[].{name:name,loginServer:loginServer,location:location,adminUserEnabled:adminUserEnabled}" -o jsonc
+
+
+# Create Dockerfile
+echo '<html><h1>Hello World!</h1></html>' > index.html
+echo FROM nginx > Dockerfile
+echo COPY index.html /usr/share/nginx/html >> Dockerfile
+cat Dockerfile
+
+
+# Build Docker image
+az acr build --image my/nginx:v1 --registry $acrName --file Dockerfile .
+az acr repository list --name $acrName
+az acr repository show --name $acrName --image my/nginx:v1
+
+
+# Now, Kubernetes cluster is ready to go - hopefully.
+az aks list --resource-group $rgName --query "[].{name:name,kubernetesVersion:kubernetesVersion,fqdn:fqdn}" -o table
+
+
+# Connect to cluster
+az aks get-credentials --name $clusterName --resource-group $rgName
+kubectl config get-clusters
+kubectl config get-contexts 
+kubectl config current-context
+
+kubectl get nodes   # 2 nodes
+kubectl get pods    # no pods
+
+
+# Grant permission to cluster SP to pull from registry
+az aks update --name $clusterName --attach-acr $acrName --resource-group $rgName
+
+
+
+# Run pod
+image=$acrName.azurecr.io/my/nginx:v1
+kubectl run mypod --image=$image --port=80
+kubectl get pods
+kubectl expose mypod test --port=80 --type=LoadBalancer
+
+
+# Test
+kubectl get service
+
+# Note the public ip address. Try public ip address in a browser.
