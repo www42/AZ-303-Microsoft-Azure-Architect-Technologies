@@ -702,7 +702,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30305c-vmss** blade, select the **Instances** entry and, on the **az30305c-vmss \| Instances** blade, observe the process of updating the existing instances.
 
-    > **Note**: The disk attached in the previous step is a raw disks. Before it can be used, it is necessary to create a partition, format it, and mount it. To accomplish this, you will deploy a PowerShell script to Azure VM scale set instances via the Custom Script extension. First, however, you will need to remove it.
+    > **Note**: The disk attached in the previous step is a raw disk. Before it can be used, it is necessary to create a partition, format it, and mount it. To accomplish this, you will deploy a PowerShell script to Azure VM scale set instances via the Custom Script extension. First, however, you will need to remove it.
 
 1. On the **az30305c-vmss** blade, select **Extensions**, on the **az30305c-vmss \| Extensions** blade, select the **customScriptExtension** entry, and then, on the **Extensions** blade, select **Uninstall**.
 
