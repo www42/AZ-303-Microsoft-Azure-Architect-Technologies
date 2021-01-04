@@ -529,7 +529,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: In addition, deployment of an Azure Application Gateway requires a dedicated subnet, included in the diagram (although the gateway is not displayed).
 
-    > **Note**: In this configuration, it is not possible to use Network Watcher to view the effective network security rules (that is one of distinctions between Azure VMs and instances of an Azure VM Scale Set). Similarly, you cannot rely on use **Connection troubleshoot** to test network connectivity from Azure VM Scale Set instances, although it is possible to use it to test connectivity from the Azure Application Gateway.
+    > **Note**: In this configuration, it is not possible to use Network Watcher to view the effective network security rules (that is one of distinctions between Azure VMs and instances of an Azure VM Scale Set). Similarly, you cannot rely on using **Connection troubleshoot** to test network connectivity from Azure VM Scale Set instances, although it is possible to use it to test connectivity from the Azure Application Gateway.
 
 1. In the Azure portal, navigate to the **az30305c-labRG** resource group blade, in the list of resources, and select the **az30305c-vmss** virtual machine scale set entry. 
 
@@ -702,7 +702,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30305c-vmss** blade, select the **Instances** entry and, on the **az30305c-vmss \| Instances** blade, observe the process of updating the existing instances.
 
-    > **Note**: The disk attached in the previous step is a raw disks. Before it can be used, it is necessary to create a partition, format it, and mount it. To accomplish this, you will deploy a PowerShell script to Azure VM scale set instances via the Custom Script extension. First, however, you will need to remove it.
+    > **Note**: The disk attached in the previous step is a raw disk. Before it can be used, it is necessary to create a partition, format it, and mount it. To accomplish this, you will deploy a PowerShell script to Azure VM scale set instances via the Custom Script extension. First, however, you will need to remove it.
 
 1. On the **az30305c-vmss** blade, select **Extensions**, on the **az30305c-vmss \| Extensions** blade, select the **customScriptExtension** entry, and then, on the **Extensions** blade, select **Uninstall**.
 
