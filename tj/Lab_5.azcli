@@ -107,3 +107,26 @@ az deployment group create \
 # --------------
 pip=20.73.129.35
 for i in {1..4}; do curl $pip; done
+
+
+# =================================
+# Exercise 4  Scale Set Autoscaling
+# =================================
+
+# Task 1: Configure autoscaling of an Azure VM Scale Set
+# in Portal
+
+# Task 2: Test autoscaling of an Azure VM Scale Set
+ip=20.71.9.136
+for (( ; ; )); do curl -s $ip?[1-10]; done
+
+
+# ===============================================================
+# Exercise 5  mplementing vertical scaling of Azure VM Scale Sets
+# ===============================================================
+
+# Task 1: Scale compute resources of Azure virtual machine scale set instances.
+# im Portal
+
+# Task 2: Scale storage resources of Azure virtual machine scale sets instances.
+# im Portal
