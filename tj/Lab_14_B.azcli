@@ -1,4 +1,4 @@
-# AZ-303 Lab 12 B 
+# AZ-303 Lab 14 B 
 # Configuring a Message-Based Integration Architecture
 
 export PREFIX=$(echo `openssl rand -base64 5 | cut -c1-7 | tr '[:upper:]' '[:lower:]' | tr -cd '[[:alnum:]]._-'`)
