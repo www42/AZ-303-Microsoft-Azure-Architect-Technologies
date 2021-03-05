@@ -607,7 +607,7 @@ The main tasks for this exercise are as follows:
     | Metric namespace | **Virtual Machine Host** |
     | Metric name | **Percentage CPU** |
     | VMName Operator | **=** |
-    | Dimension values | **2 selected** |
+    | Dimension values | **az30305c-vmss_0** |
     | Enable metric divide by instance count | **Enabled** |
     | Operator | **Greater than** |
     | Metric threshold to trigger scale action | **1** |
