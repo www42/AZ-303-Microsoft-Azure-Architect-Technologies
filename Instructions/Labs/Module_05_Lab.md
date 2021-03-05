@@ -121,6 +121,9 @@ The main tasks for this exercise are as follows:
       > **Note**: Ensure to use the proper notation for the Azure region (short name which does not include a space, e.g. **eastus** rather than **US East**)
       
       > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
+
+      > **Note**: To identify the names of the Azure regions to use when setting the value of the **LOCATION** variable, run `az account list-locations --query "[].{name:name}" -o table`
+
       
 1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305rga.json**.
 
