@@ -97,7 +97,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
     
-1. From the Cloud Shell pane, run the following to register the Microsoft.Insights resource provider in preparation for the later exercises in this lab:
+1. From the Cloud Shell pane, run the following to register the Microsoft.Insights resource provider in preparation for the upcoming exercises in this lab:
 
    ```Bash
    az provider register --namespace 'Microsoft.Insights'
@@ -105,25 +105,30 @@ The main tasks for this exercise are as follows:
 
 1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305suba.json** into the Cloud Shell home directory.
 
-1. From the Cloud Shell pane, run the following to create a resource group (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer):
+1. From the Cloud Shell pane, run the following to designate the Azure region you will be using in this lab (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer):
 
    ```Bash
    LOCATION='<Azure region>'
    ```
    
+      > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
+
+      > **Note**: To identify the names of the Azure regions to use when setting the value of the **LOCATION** variable, run `az account list-locations --query "[].{name:name}" -o table`. Make sure to use the notation which does not include a space, e.g. **eastus** rather than **US East**.
+
+1. From the Cloud Shell pane, run the following to create an instance of Network Watcher in preparation for the upcoming exercises in this lab:
+
+   ```Bash
+   az network watcher configure --resource-group NetworkWatcherRG --locations $LOCATION --enabled -o table
+   ```
+
+1. From the Cloud Shell pane, run the following to create a resource group in the designated Azure region.
+ 
    ```Bash
    az deployment sub create \
    --location $LOCATION \
    --template-file azuredeploy30305suba.json \
    --parameters rgName=az30305a-labRG rgLocation=$LOCATION
    ```
-
-      > **Note**: Ensure to use the proper notation for the Azure region (short name which does not include a space, e.g. **eastus** rather than **US East**)
-      
-      > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
-
-      > **Note**: To identify the names of the Azure regions to use when setting the value of the **LOCATION** variable, run `az account list-locations --query "[].{name:name}" -o table`
-
       
 1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305rga.json**.
 
