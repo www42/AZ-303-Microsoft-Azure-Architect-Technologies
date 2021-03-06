@@ -207,19 +207,19 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az30306a-vm0**, start Azure Storage Explorer. 
 
-1. In the Azure Storage Explorer window, in the **Connect to Azure Storage** window, select **Use a shared access signature (SAS) URI** and select **Next**.
+1. In the Azure Storage Explorer window, on the **Select Resource** tab of the **Connect to Azure Storage** window, select **Storage account**.
 
-1. In the **Attach with SAS URI** window, in the **Display name** text box, type **az30306a-blobs**, in the **URI** text box, paste the value you copied into Clipboard, and select **Next**. 
+1. In the Azure Storage Explorer window, on the **Select Authentication Method** tab of the **Connect to Azure Storage** window, select **Shared access signature (SAS)**.
 
-    >**Note**: This should automatically populate the value of **Blob endpoint** text box.
+1. In the Azure Storage Explorer window, on the **Enter Connection Info** tab of the **Connect to Azure Storage** window, in the **Display name** text box, type **az30306a-blobs**, in the **SAS connection string or service URL** text box, paste the value you copied into Clipboard, and select **Next**. 
 
-1. In the **Connection Summary** window, select **Connect**. 
+1. In the Azure Storage Explorer window, on the **Summary** tab of the **Connect to Azure Storage** window, select **Connect**. 
 
 1. In the Azure Storage Explorer window, in the **EXPLORER** pane, navigate to the **az30306a-blobs** entry, expand it and note that you have access to **Blob Container** endpoint only. 
 
 1. Right select the **az30306a-blobs** entry, in the right-click menu, select **Create Blob Container**, and use the empty text box to set the container name to **container1**.
 
-1. Select **container1**, in the **container1** pane, select **Upload**, and in the drop-down list, select **Upload Files**.
+1. Select **container1** to open a new tab in the main window pane of the Storage Explorer window, on the **container1** tab, select **Upload**, and in the drop-down list, select **Upload Files**.
 
 1. In the **Upload Files** window, select the ellipsis button next to the **Selected files** label, in the **Choose files to upload** window, select **C:\Windows\system.ini**, and select **Open**.
 
