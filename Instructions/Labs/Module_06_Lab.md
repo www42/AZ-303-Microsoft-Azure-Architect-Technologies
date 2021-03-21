@@ -170,14 +170,16 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az30306a-vm0**, in the Server Manager window, select **Local Server**, select the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
 
-1. Within the Remote Desktop session to **az30306a-vm0**, start Internet Explorer and navigate to the download page of [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
+1. Within the Remote Desktop session to **az30306a-vm0**, start Internet Explorer, navigate to the download page of [Microsoft Edge](https://www.microsoft.com/en-us/edge/business/download), download Microsoft Edge installer and perform the installation. 
+
+1. Within the Remote Desktop session to **az30306a-vm0**, in Microsoft Edge, navigate to the download page of [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
 
 1. Within the Remote Desktop session to **az30306a-vm0**, download and install Azure Storage Explorer with the default settings. 
 
 
 #### Task 3: Generate an account-level shared access signature
 
-1. Within the Remote Desktop session to **az30306a-vm0**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign-in by providing credentials of the user account with the Owner role in the subscription you are using in this lab.
+1. Within the Remote Desktop session to **az30306a-vm0**, start Microsoft Edge, navigate to the [Azure portal](https://portal.azure.com), and sign-in by providing credentials of the user account with the Owner role in the subscription you are using in this lab.
 
 1. Navigate to the blade of the newly created storage account, select **Access keys** and review the settings of the target blade.
 
