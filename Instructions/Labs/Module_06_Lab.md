@@ -365,10 +365,6 @@ The main tasks for this exercise are as follows:
 
 #### Task 3: Upload a file to a blob container by using AzCopy
 
-1. Within the Remote Desktop session to **az30306a-vm0**, in the browser window, navigate to [Get started with AzCopy](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10).
-
-1. Download the azcopy.zip file and extract azcopy.exe into the **C:\\Labfiles** folder (create the folder if needed).
-
 1. Within the Remote Desktop session to **az30306a-vm0**, start Windows PowerShell. 
 
 1. From the Windows PowerShell prompt, run the following to download the **azcopy.zip** archive, extract its content, and switch to the location containing **azcopy.exe**:
