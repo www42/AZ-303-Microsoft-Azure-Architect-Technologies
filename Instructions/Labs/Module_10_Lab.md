@@ -274,10 +274,17 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
 
-1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
+1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab:
 
    ```powershell
    Get-AzResourceGroup -Name 'az30310*' | Remove-AzResourceGroup -Force -AsJob
+   ```
+
+1. From the Cloud Shell pane, run the following to delete the lab files you uploaded earlier in this lab:
+
+   ```powershell
+   Get-ChildItem -Path . -Filter 'az30310*.json' | Remove-Item -Force
+   Get-ChildItem -Path . -Filter 'roledefinition30310.json' | Remove-Item -Force
    ```
 
 1. Close the Cloud Shell pane.
