@@ -120,7 +120,8 @@ The main tasks for this exercise are as follows:
    ```Bash
    az network watcher configure --resource-group NetworkWatcherRG --locations $LOCATION --enabled -o table
    ```
-
+      > **Note**: If you receive an error indicating there is no "NetworkWatcherRG" resource group, create a resource group from the portal named NetworkWatcherRG and rerun the command.
+      > 
 1. From the Cloud Shell pane, run the following to create a resource group in the designated Azure region.
  
    ```Bash
