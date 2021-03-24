@@ -283,7 +283,7 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to delete the lab files you uploaded earlier in this lab:
 
    ```powershell
-   Get-ChildItem -Path . -Filter 'az30310*.json' | Remove-Item -Force
+   Get-ChildItem -Path . -Filter 'azuredeploy30310*.json' | Remove-Item -Force
    Get-ChildItem -Path . -Filter 'roledefinition30310.json' | Remove-Item -Force
    ```
 
