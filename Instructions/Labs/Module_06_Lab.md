@@ -130,7 +130,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create an Azure Storage account
 
-1. In the Azure portal, search for and select **Storage accounts** and, on the **Storage accounts** blade, select **+ Add**.
+1. In the Azure portal, search for and select **Storage accounts** and, on the **Storage accounts** blade, select **+ Create**.
 
 1. On the **Basics** tab of the **Create storage account** blade, specify the following settings (leave others with their default values):
 
@@ -159,7 +159,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, search for and select **Virtual machines**, and, on the **Virtual machines** blade, in the list of virtual machines, select **az30306a-vm0**.
 
-1. On the **az30306a-vm0** blade, select **Connect**, in the drop-down menu, select **RDP**, and then select **Download RDP File**.
+1. On the **az30306a-vm0** blade, select **Connect**, in the drop-down menu, select **RDP**, and then select **Download RDP File**, then select **open file** and select **Connect**.
 
 1. When prompted, sign in with the following credentials:
 
@@ -460,7 +460,7 @@ The main tasks for this exercise are as follows:
 
     >**Note**: Azure Storage file share mapping uses the storage account name and one of two storage account keys as the equivalents of user name and password, respectively in order to gain access to the target share.
 
-1. Within the Remote Desktop session to **az30306a-vm0**, at the PowerShell prompt, paste and execute the script you copied.
+1. Within the Remote Desktop session to **az30306a-vm0**, open a PowerShell session and at the PowerShell prompt, paste and execute the script you copied.
 
 1. Verify that the script completed successfully. 
 
