@@ -394,7 +394,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, back on the **az30312b-rsvault \| Site Recovery** blade, in the vertical menu, select **Replicated items**. 
 
-1. On the **az30312b-rsvault \| Replicated items** blade, ensure that there is an entry representing the **az30312a-vm1** virtual machine and verify that its **Replication Health** is listed as **Healthy** and that its **Status** is listed as either **Enabling protection** or displaying a current percentage of synchronization progress.
+1. On the **az30312b-rsvault \| Replicated items** blade, ensure that there is an entry representing the **az30312a-vm1** virtual machine and verify that its **Replication Health** is listed as **Healthy** and that its **Status** is listed as either **Enabling protection**, **Waiting for first recovery point**, or displaying a current percentage of synchronization progress.
 
    > **Note**: You might need to wait a few minutes until the **az30312a-vm1** entry appears on the **az30312b-rsvault \| Replicated items** blade.
 
