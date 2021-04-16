@@ -250,6 +250,8 @@ The main tasks for this exercise are as follows:
 1. From the lab computer, start a new in-private web browser session, navigate to the [Azure portal](https://portal.azure.com), and sign in by using the **az30310aaduser1** user account with the **Pa55w.rd1234** password.
 
     > **Note**: Make sure to use the user principal name of the **az30310aaduser1** user account, which you recorded earlier in this lab.
+    
+    > **Note**: If you want to skip the Microsoft Security Default for the account during the login process, use the link *"Skip for now (14 days until this is required)"* option.
 
 1. In the Azure portal, navigate to the **Resource groups** blade. Note that you are not able to see any resource groups. 
 
