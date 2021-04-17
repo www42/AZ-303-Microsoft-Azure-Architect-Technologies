@@ -219,7 +219,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure Storage Explorer window, in the **EXPLORER** pane, navigate to the **az30306a-blobs** entry, expand it and note that you have access to **Blob Container** endpoint only. 
 
-1. Right select the **az30306a-blobs** entry, in the right-click menu, select **Create Blob Container**, and use the empty text box to set the container name to **container1**.
+1. Right select the **Blob Containers** entry (nested in the **az30306a-blobs** entry), in the right-click menu, select **Create Blob Container**, and use the empty text box to set the container name to **container1**.
 
 1. Select **container1** to open a new tab in the main window pane of the Storage Explorer window, on the **container1** tab, select **Upload**, and in the drop-down list, select **Upload Files**.
 
