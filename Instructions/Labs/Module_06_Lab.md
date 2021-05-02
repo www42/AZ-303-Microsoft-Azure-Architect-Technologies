@@ -130,7 +130,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create an Azure Storage account
 
-1. In the Azure portal, search for and select **Storage accounts** and, on the **Storage accounts** blade, select **+ Add**.
+1. In the Azure portal, search for and select **Storage accounts** and, on the **Storage accounts** blade, select **+ Create**.
 
 1. On the **Basics** tab of the **Create storage account** blade, specify the following settings (leave others with their default values):
 
@@ -159,7 +159,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, search for and select **Virtual machines**, and, on the **Virtual machines** blade, in the list of virtual machines, select **az30306a-vm0**.
 
-1. On the **az30306a-vm0** blade, select **Connect**, in the drop-down menu, select **RDP**, and then select **Download RDP File**.
+1. On the **az30306a-vm0** blade, select **Connect**, in the drop-down menu, select **RDP**, and then select **Download RDP File**, then select **open file** and select **Connect**.
 
 1. When prompted, sign in with the following credentials:
 
@@ -170,14 +170,16 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az30306a-vm0**, in the Server Manager window, select **Local Server**, select the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
 
-1. Within the Remote Desktop session to **az30306a-vm0**, start Internet Explorer and navigate to the download page of [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
+1. Within the Remote Desktop session to **az30306a-vm0**, start Internet Explorer, navigate to the download page of [Microsoft Edge](https://www.microsoft.com/en-us/edge/business/download), download Microsoft Edge installer and perform the installation. 
+
+1. Within the Remote Desktop session to **az30306a-vm0**, in Microsoft Edge, navigate to the download page of [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
 
 1. Within the Remote Desktop session to **az30306a-vm0**, download and install Azure Storage Explorer with the default settings. 
 
 
 #### Task 3: Generate an account-level shared access signature
 
-1. Within the Remote Desktop session to **az30306a-vm0**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign-in by providing credentials of the user account with the Owner role in the subscription you are using in this lab.
+1. Within the Remote Desktop session to **az30306a-vm0**, start Microsoft Edge, navigate to the [Azure portal](https://portal.azure.com), and sign-in by providing credentials of the user account with the Owner role in the subscription you are using in this lab.
 
 1. Navigate to the blade of the newly created storage account, select **Access keys** and review the settings of the target blade.
 
@@ -207,19 +209,19 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az30306a-vm0**, start Azure Storage Explorer. 
 
-1. In the Azure Storage Explorer window, in the **Connect to Azure Storage** window, select **Use a shared access signature (SAS) URI** and select **Next**.
+1. In the Azure Storage Explorer window, on the **Select Resource** tab of the **Connect to Azure Storage** window, select **Storage account**.
 
-1. In the **Attach with SAS URI** window, in the **Display name** text box, type **az30306a-blobs**, in the **URI** text box, paste the value you copied into Clipboard, and select **Next**. 
+1. In the Azure Storage Explorer window, on the **Select Authentication Method** tab of the **Connect to Azure Storage** window, select **Shared access signature (SAS)**.
 
-    >**Note**: This should automatically populate the value of **Blob endpoint** text box.
+1. In the Azure Storage Explorer window, on the **Enter Connection Info** tab of the **Connect to Azure Storage** window, in the **Display name** text box, type **az30306a-blobs**, in the **SAS connection string or service URL** text box, paste the value you copied into Clipboard, and select **Next**. 
 
-1. In the **Connection Summary** window, select **Connect**. 
+1. In the Azure Storage Explorer window, on the **Summary** tab of the **Connect to Azure Storage** window, select **Connect**. 
 
 1. In the Azure Storage Explorer window, in the **EXPLORER** pane, navigate to the **az30306a-blobs** entry, expand it and note that you have access to **Blob Container** endpoint only. 
 
-1. Right select the **az30306a-blobs** entry, in the right-click menu, select **Create Blob Container**, and use the empty text box to set the container name to **container1**.
+1. Right select the **Blob Containers** entry (nested in the **az30306a-blobs** entry), in the right-click menu, select **Create Blob Container**, and use the empty text box to set the container name to **container1**.
 
-1. Select **container1**, in the **container1** pane, select **Upload**, and in the drop-down list, select **Upload Files**.
+1. Select **container1** to open a new tab in the main window pane of the Storage Explorer window, on the **container1** tab, select **Upload**, and in the drop-down list, select **Upload Files**.
 
 1. In the **Upload Files** window, select the ellipsis button next to the **Selected files** label, in the **Choose files to upload** window, select **C:\Windows\system.ini**, and select **Open**.
 
@@ -365,10 +367,6 @@ The main tasks for this exercise are as follows:
 
 #### Task 3: Upload a file to a blob container by using AzCopy
 
-1. Within the Remote Desktop session to **az30306a-vm0**, in the browser window, navigate to [Get started with AzCopy](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10).
-
-1. Download the azcopy.zip file and extract azcopy.exe into the **C:\\Labfiles** folder (create the folder if needed).
-
 1. Within the Remote Desktop session to **az30306a-vm0**, start Windows PowerShell. 
 
 1. From the Windows PowerShell prompt, run the following to download the **azcopy.zip** archive, extract its content, and switch to the location containing **azcopy.exe**:
@@ -460,7 +458,7 @@ The main tasks for this exercise are as follows:
 
     >**Note**: Azure Storage file share mapping uses the storage account name and one of two storage account keys as the equivalents of user name and password, respectively in order to gain access to the target share.
 
-1. Within the Remote Desktop session to **az30306a-vm0**, at the PowerShell prompt, paste and execute the script you copied.
+1. Within the Remote Desktop session to **az30306a-vm0**, open a PowerShell session and at the PowerShell prompt, paste and execute the script you copied.
 
 1. Verify that the script completed successfully. 
 

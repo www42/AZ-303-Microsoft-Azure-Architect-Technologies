@@ -250,6 +250,8 @@ The main tasks for this exercise are as follows:
 1. From the lab computer, start a new in-private web browser session, navigate to the [Azure portal](https://portal.azure.com), and sign in by using the **az30310aaduser1** user account with the **Pa55w.rd1234** password.
 
     > **Note**: Make sure to use the user principal name of the **az30310aaduser1** user account, which you recorded earlier in this lab.
+    
+    > **Note**: If you want to skip the Microsoft Security Default for the account during the login process, use the link *"Skip for now (14 days until this is required)"* option.
 
 1. In the Azure portal, navigate to the **Resource groups** blade. Note that you are not able to see any resource groups. 
 
@@ -274,10 +276,17 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
 
-1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
+1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab:
 
    ```powershell
    Get-AzResourceGroup -Name 'az30310*' | Remove-AzResourceGroup -Force -AsJob
+   ```
+
+1. From the Cloud Shell pane, run the following to delete the lab files you uploaded earlier in this lab:
+
+   ```powershell
+   Get-ChildItem -Path . -Filter 'azuredeploy30310*.json' | Remove-Item -Force
+   Get-ChildItem -Path . -Filter 'roledefinition30310.json' | Remove-Item -Force
    ```
 
 1. Close the Cloud Shell pane.

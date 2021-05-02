@@ -121,7 +121,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30312a-hv-vm** blade, select **Overview**. 
 
-1. On the **az30312a-hv-vm** blade, select **Connect**, in the drop-down menu, select **RDP**, and then click **Download RDP File**.
+1. On the **az30312a-hv-vm** blade, select **Connect**, in the drop-down menu, select **RDP**, and then click **Download RDP File**, after the RDP file downloads select **Open file** and select **Connect**.
 
 1. When prompted, sign in with the following credentials:
 
@@ -131,7 +131,9 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az30312a-hv-vm**, in the Server Manager window, click **Local Server**, click the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
 
-1. Within the Remote Desktop session to **az30312a-hv-vm**, start Internet Explorer, browse to [Windows Server Evaluations](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019), and download the Windows Server 2019 **VHD** file to the **F:\VHDs** folder (you will need to create it first). 
+1. Within the Remote Desktop session to **az30312a-hv-vm**, start Internet Explorer, navigate to the download page of [Microsoft Edge](https://www.microsoft.com/en-us/edge/business/download), download Microsoft Edge installer and perform the installation. 
+
+1. Within the Remote Desktop session to **az30312a-hv-vm**, use Microsoft Edge to browse to [Windows Server Evaluations](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019), and download the Windows Server 2019 **VHD** file to the **F:\VHDs** folder (you will need to create it first). 
 
 1. Within the Remote Desktop session to **az30312a-hv-vm**, start **Hyper-V Manager**. 
 
@@ -188,9 +190,9 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create an Azure Site Recovery vault
 
-1. Within the Remote Desktop session to **az30312a-hv-vm**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials of a user account with the Owner role in the subscription you will be using in this lab.
+1. Within the Remote Desktop session to **az30312a-hv-vm**, start Microsoft Edge, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials of a user account with the Owner role in the subscription you will be using in this lab.
 
-1. In the Azure portal, search for and select **Recovery Services vaults** and, on the **Recovery Services vaults** blade, select **+ Add**.
+1. In the Azure portal, search for and select **Recovery Services vaults** and, on the **Recovery Services vaults** blade, select **+ Create**.
 
 1. On the **Basics** tab of the **Create Recovery Services vault** blade, specify the following settings (leave others with their default values) and select **Review + create**:
 
@@ -238,7 +240,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Implement the target Azure environment
 
-1. In the Azure portal, search for and select **Virtual networks** and, on the **Virtual networks** blade, select **+ Add**.
+1. In the Azure portal, search for and select **Virtual networks** and, on the **Virtual networks** blade, select **+ Create**.
 
 1. On the **Basics** tab of the **Create virtual network** blade, specify the following settings (leave others with their default values) and select **Next: IP Addresses**:
 
@@ -262,7 +264,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Review + create** tab of the **Create virtual network** blade, select **Create**.
 
-1. In the Azure portal, search for and select **Virtual networks** and, on the **Virtual networks** blade, select **+ Add**.
+1. In the Azure portal, search for and select **Virtual networks** and, on the **Virtual networks** blade, select **+ Create**.
 
 1. On the **Basics** tab of the **Create virtual network** blade, specify the following settings (leave others with their default values) and select **Next: IP Addresses**:
 
@@ -286,7 +288,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Review + create** tab of the **Create virtual network** blade, select **Create**.
 
-1. In the Azure portal, search for and select **Storage accounts** and, on the **Storage accounts** blade, select **+ Add**.
+1. In the Azure portal, search for and select **Storage accounts** and, on the **Storage accounts** blade, select **+ Create**.
 
 1. On the **Basics** tab of the **Create storage account** blade, specify the following settings (leave others with their default values):
 
@@ -307,7 +309,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Implement protection of a Hyper-V virtual machine
 
-1. Within the Remote Desktop session to **az30312a-hv-vm**, in the Azure portal, on the **az30312b-rsvault** blade, in the **Getting started** section, select **Site Recovery**
+1. Within the Remote Desktop session to **az30312a-hv-vm**, in the Azure portal, on the **az30312b-rsvault** blade, in the **Site Recovery**section, select **Getting started**.
 
 1. On the **az30312b-rsvault \| Site Recovery** blade, in the **Hyper-V machines to Azure** section, select **1. Prepare infrastructure**. 
 
@@ -321,13 +323,13 @@ The main tasks for this exercise are as follows:
 
 1. On the **Add Server** blade, select the **Download** link in step 3 of the procedure for adding on-premises Hyper-V hosts in order to download the Microsoft Azure Site Recovery Provider.
 
-1. When prompted, in the browser window, select **Run** to launch **AzureSiteRecoveryProvider.exe**. This will start the **Azure Site Recovery Provider Setup (Hyper-V server)** wizard.
+1. When the download completes, select **Open file** then select **Run** to launch **AzureSiteRecoveryProvider.exe**. This will start the **Azure Site Recovery Provider Setup (Hyper-V server)** wizard.
 
 1. On the **Microsoft Update** page, select **Off** and select **Next**.
 
 1. On the **Provider installation** page, select **Install**.
 
-1. Switch to the Azure portal and, on the **Add Server** blade, select the **Download** button in step 4 of the procedure for registering on-premises Hyper-V hosts in order to download the vault registration key. When prompted, select **Save** to save the vault credentials file in the **Downloads** folder.
+1. Switch to the Azure portal and, on the **Add Server** blade, select the **Download** button in step 4 of the procedure for registering on-premises Hyper-V hosts in order to download the vault registration key. If prompted, select **Save** to save the vault credentials file in the **Downloads** folder.
 
 1. Switch to the **Provider installation** wizard window and select **Register**. This will start the **Microsoft Azure Site Recovery Registration Wizard**.
 
@@ -339,7 +341,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Registration** page of the **Microsoft Azure Site Recovery Registration Wizard**, select **Finish**.
 
-1. Switch back to the Internet Explorer window displaying the Azure portal and refresh the page. When prompted, select **Leave the page**.
+1. Switch back to the Internet Explorer window displaying the Azure portal and refresh the page. When prompted, select **Leave the page** or **Reload** depending on the version of the browser.
 
 1. Back on the **az30312b-rsvault | Site Recovery** blade, in the **Hyper-V machines to Azure** section, select **1. Prepare infrastructure**. 
 
@@ -392,7 +394,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, back on the **az30312b-rsvault \| Site Recovery** blade, in the vertical menu, select **Replicated items**. 
 
-1. On the **az30312b-rsvault \| Replicated items** blade, ensure that there is an entry representing the **az30312a-vm1** virtual machine and verify that its **Replication Health** is listed as **Healthy** and that its **Status** is listed as either **Enabling protection** or displaying a current percentage of synchronization progress.
+1. On the **az30312b-rsvault \| Replicated items** blade, ensure that there is an entry representing the **az30312a-vm1** virtual machine and verify that its **Replication Health** is listed as **Healthy** and that its **Status** is listed as either **Enabling protection**, **Waiting for first recovery point**, or displaying a current percentage of synchronization progress.
 
    > **Note**: You might need to wait a few minutes until the **az30312a-vm1** entry appears on the **az30312b-rsvault \| Replicated items** blade.
 
@@ -406,7 +408,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 4: Perform a failover of the Hyper-V virtual machine
 
-1. Within the Remote Desktop session to **az30312a-vm0**, in the browser window displaying the Azure portal, on the **az30312a-vm1** replicated items blade, select **Test failover**. 
+1. Within the Remote Desktop session to **az30312a-hv-vm**, in the browser window displaying the Azure portal, on the **az30312a-vm1** replicated items blade, select **Test failover**. 
 
 1. On the **Test failover** blade, specify the following settings (leave others with their default values) and select **OK**:
 
@@ -437,9 +439,9 @@ The main tasks for this exercise are as follows:
 1. Close the **Failover** blade.
 
 
-#### Task 4: Remove Azure resources deployed in the lab
+#### Task 5: Remove Azure resources deployed in the lab
 
-1. Within the Remote Desktop session to **az30312a-vm0**, in the browser window displaying the Azure portal, start a PowerShell session within the Cloud Shell pane.
+1. Within the Remote Desktop session to **az30312a-hv-vm**, in the browser window displaying the Azure portal, start a PowerShell session within the Cloud Shell pane.
 
 1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
 
