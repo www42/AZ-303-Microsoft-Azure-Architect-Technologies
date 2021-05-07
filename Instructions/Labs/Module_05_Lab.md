@@ -654,7 +654,7 @@ The main tasks for this exercise are as follows:
    ```Bash
    for (( ; ; )); do curl -s <lb_IP_address>?[1-10]; done
    ```
-1. In the Azure portal, on the **az30305c-vmss** blade, review the **CPU (average)** chart and verify that the CPU utilization of the Application Gateway increased sufficiently to trigger scaling out.
+1. In the Azure portal, on the **az30305c-vmss** Overview blade, on the Monitoring tab, review the **CPU (average)** chart and verify that the CPU utilization of the Application Gateway increased sufficiently to trigger scaling out.
 
     > **Note**: You might need to wait a few minutes.
 
@@ -705,7 +705,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Scale storage resources of Azure virtual machine scale sets instances.
 
-1. On the **az30305c-vmss** blade, select **Disks**, select **+ Add data disk**, attach a new managed disk with the following settings (leave others with their default values), and select **Save**:
+1. On the **az30305c-vmss** blade, select **Disks**, select **+ Create and attach a new disk**, attach a new managed disk with the following settings (leave others with their default values), and select **Save**:
 
     | Setting | Value | 
     | --- | --- |
