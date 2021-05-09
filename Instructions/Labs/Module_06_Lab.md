@@ -132,23 +132,24 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, search for and select **Storage accounts** and, on the **Storage accounts** blade, select **+ Create**.
 
-1. On the **Basics** tab of the **Create storage account** blade, specify the following settings (leave others with their default values):
+1. On the **Basics** tab of the **Create a storage account** blade, specify the following settings (leave others with their default values) and select **Next: Advanced >**.
 
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **az30306a-labRG** |
+    | Resource group | the name of the new resource group **az30306a-labRG** |
     | Storage account name | any globally unique name between 3 and 24 in length consisting of letters and digits |
     | Location | the name of an Azure region where you can create an Azure Storage account  |
-    | Performance | **Standard** |
-    | Account kind | **StorageV2 (general purpose v2)** |
-    | Replication | **Locally redundant storage (LRS)** |
+    | Performance | **Standard: Recommended for most scenarios (general-purpose v2 account)** |
+    | Redundancy | **Locally redundant storage (LRS)** |
 
-1. Select **Next: Networking >**, on the **Networking** tab of the **Create storage account** blade, review the available options, accept the default option **Public endpoint (all networks}** and select **Next: Data protection >**.
+1. On the **Advanced** tab of the **Create a storage account** blade, review the available options, accept the defaults and Select **Next: Networking >**.
 
-1. On the **Data protection** tab of the **Create storage account** blade, review the available options, accept the defaults, select **Next: Advanced >**.
+1. On the **Networking** tab of the **Create a storage account** blade, review the available options, accept the default option **Public endpoint (all networks)** and select **Next: Data protection >**.
 
-1. On the **Advanced** tab of the **Create storage account** blade, review the available options, accept the defaults, select **Review + Create**, wait for the validation process to complete and select **Create**.
+1. On the **Data protection** tab of the **Create storage account** blade, review the available options, accept the defaults, and select **Next: Tags >**.
+
+1. Select **Review + Create**, wait for the validation process to complete and select **Create**.
 
     >**Note**: Wait for the Storage account to be created. This should take about 2 minutes.
 
@@ -209,11 +210,13 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az30306a-vm0**, start Azure Storage Explorer. 
 
-1. In the Azure Storage Explorer window, on the **Select Resource** tab of the **Connect to Azure Storage** window, select **Storage account**.
+1. In the Azure Storage Explorer window, on the **Select Resource** tab of the **Connect to Azure Storage** window, select **Storage account or service**.
 
-1. In the Azure Storage Explorer window, on the **Select Authentication Method** tab of the **Connect to Azure Storage** window, select **Shared access signature (SAS)**.
+1. In the Azure Storage Explorer window, on the **Select Connection Method** tab of the **Connect to Azure Storage** window, select **Shared access signature URL (SAS)** and select **Next**.
 
-1. In the Azure Storage Explorer window, on the **Enter Connection Info** tab of the **Connect to Azure Storage** window, in the **Display name** text box, type **az30306a-blobs**, in the **SAS connection string or service URL** text box, paste the value you copied into Clipboard, and select **Next**. 
+1. In the Azure Storage Explorer window, on the **Enter Connection Info** tab of the **Connect to Azure Storage** window, in the **Display name** text box, type **az30306a-blobs**, in the **Service URL** text box, paste the value you copied into Clipboard, and select **Next**. 
+
+    >**Note**: If Ctrl-V paste doesn't seem to work within the RDP session, try copying the Service URL into a Notepad on the SEA-Dev VM and then copying the value back into the RDP session.
 
 1. In the Azure Storage Explorer window, on the **Summary** tab of the **Connect to Azure Storage** window, select **Connect**. 
 
@@ -275,7 +278,7 @@ The main tasks for this exercise are as follows:
 
 1. Close the Cloud Shell pane.
 
-1. Within the Remote Desktop session to **az30306a-vm0**, in the browser window, on the storage account blade, in the **Blob service** section, select **Containers**.
+1. Within the Remote Desktop session to **az30306a-vm0**, in the browser window, on the storage account blade, in the **Data storage** section, select **Containers**.
 
 1. In the list of containers, select **container1**.
 
@@ -440,7 +443,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create an Azure Storage file share
 
-1. Within the Remote Desktop session to **az30306a-vm0**, in the browser window displaying the Azure portal, navigate back to the blade of the storage account you created in the first exercise of this lab and, in the **File service** section, select **File shares**.
+1. Within the Remote Desktop session to **az30306a-vm0**, in the browser window displaying the Azure portal, navigate back to the blade of the storage account you created in the first exercise of this lab and, in the **Data storage** section, select **File shares**.
 
 1. Select **+ File share** and create a file share with the following settings:
 
