@@ -192,7 +192,7 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az30312a-hv-vm**, start Microsoft Edge, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials of a user account with the Owner role in the subscription you will be using in this lab.
 
-1. In the Azure portal, search for and select **Recovery Services vaults** and, on the **Recovery Services vaults** blade, select **+ Create**.
+1. In the Azure portal, search for and select **Recovery Services vaults** and, on the **Recovery Services vaults** blade, select **+ New**.
 
 1. On the **Basics** tab of the **Create Recovery Services vault** blade, specify the following settings (leave others with their default values) and select **Review + create**:
 
@@ -240,7 +240,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Implement the target Azure environment
 
-1. In the Azure portal, search for and select **Virtual networks** and, on the **Virtual networks** blade, select **+ Create**.
+1. In the Azure portal, search for and select **Virtual networks** and, on the **Virtual networks** blade, select **+ New**.
 
 1. On the **Basics** tab of the **Create virtual network** blade, specify the following settings (leave others with their default values) and select **Next: IP Addresses**:
 
@@ -264,7 +264,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Review + create** tab of the **Create virtual network** blade, select **Create**.
 
-1. In the Azure portal, search for and select **Virtual networks** and, on the **Virtual networks** blade, select **+ Create**.
+1. In the Azure portal, search for and select **Virtual networks** and, on the **Virtual networks** blade, select **+ New**.
 
 1. On the **Basics** tab of the **Create virtual network** blade, specify the following settings (leave others with their default values) and select **Next: IP Addresses**:
 
@@ -288,7 +288,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Review + create** tab of the **Create virtual network** blade, select **Create**.
 
-1. In the Azure portal, search for and select **Storage accounts** and, on the **Storage accounts** blade, select **+ Create**.
+1. In the Azure portal, search for and select **Storage accounts** and, on the **Storage accounts** blade, select **+ New**.
 
 1. On the **Basics** tab of the **Create storage account** blade, specify the following settings (leave others with their default values):
 
@@ -298,9 +298,8 @@ The main tasks for this exercise are as follows:
     | Resource group | **az30312c-labRG** |
     | Storage account name | any globally unique name between 3 and 24 in length consisting of letters and digits |
     | Location | the name of the Azure region in which you created the virtual network earlier in this task |
-    | Performance | **Standard** |
-    | Account kind | **StorageV2 (general purpose v2)** |
-    | Replication | **Locally redundant storage (LRS)** |
+    | Performance | **Standard: Recommended for most scenarios (general-purpose v2)** |
+    | Redundancy | **Locally redundant storage (LRS)** |
 
 1. On the **Basics** tab of the **Create storage account** blade, select **Review + create**.
 
@@ -341,7 +340,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Registration** page of the **Microsoft Azure Site Recovery Registration Wizard**, select **Finish**.
 
-1. Switch back to the Internet Explorer window displaying the Azure portal and refresh the page. When prompted, select **Leave the page** or **Reload** depending on the version of the browser.
+1. Switch back to the browser window displaying the Azure portal and refresh the page. When prompted, select **Leave the page** or **Reload** depending on the version of the browser.
 
 1. Back on the **az30312b-rsvault | Site Recovery** blade, in the **Hyper-V machines to Azure** section, select **1. Prepare infrastructure**. 
 
@@ -396,13 +395,13 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30312b-rsvault \| Replicated items** blade, ensure that there is an entry representing the **az30312a-vm1** virtual machine and verify that its **Replication Health** is listed as **Healthy** and that its **Status** is listed as either **Enabling protection**, **Waiting for first recovery point**, or displaying a current percentage of synchronization progress.
 
-   > **Note**: You might need to wait a few minutes until the **az30312a-vm1** entry appears on the **az30312b-rsvault \| Replicated items** blade.
+    >**Note**: You might need to wait a few minutes until the **az30312a-vm1** entry appears on the **az30312b-rsvault \| Replicated items** blade.
 
 1. On the **az30312b-rsvault \| Replicated items** blade, select the **az30312a-vm1** entry.
 
 1. On the **az30312a-vm1** replicated items blade, review the **Health and status**, **Failover readiness**, **Latest recovery points**, and **Infrastructure view** sections. Note the **Planned Failover**, **Failover** and **Test Failover** toolbar icons.
 
-   > **Note**: Wait until the status changes to **Protected**. This might take additional 15 minutes. You will need to refresh the browser page for the status to be updated.
+    >**Note**: Wait until the status changes to **Protected**. This might take additional 15 minutes. You will need to refresh the browser page for the status to be updated.
 
 1. On the **az30312a-vm1** replicated items blade, select **Latest recovery points** and review **Latest crash-consistent** and **Latest app-consistent** recovery points. 
 
@@ -422,7 +421,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, note the entry representing the newly provisioned virtual machine **az30312a-vm1-test**.
 
-1. In the Azure portal, navigate back to the on the **az30312a-vm1** replicated items blade and select **Cleanup test failover*.
+1. In the Azure portal, navigate back to the on the **az30312a-vm1** replicated items blade and select **Cleanup test failover**.
 
 1. On the **Test failover cleanup** blade, select the checkbox **Testing is complete. Delete test failover virtual machine(s)** and select **OK**.
 
