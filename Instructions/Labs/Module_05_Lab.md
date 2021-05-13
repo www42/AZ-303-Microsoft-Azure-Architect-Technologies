@@ -48,9 +48,9 @@ After completing this lab, you will be able to:
   
 Windows Server admin credentials
 
--  User Name: **Student**
+-  User Name: **Admin**
 
--  Password: **Pa55w.rd1234**
+-  Password: **Pa55w.rd**
 
 Estimated Time: 120 minutes
 
@@ -113,6 +113,7 @@ The main tasks for this exercise are as follows:
    
       > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
 
+
       > **Note**: To identify the names of the Azure regions to use when setting the value of the **LOCATION** variable, run `az account list-locations --query "[].{name:name}" -o table`. Make sure to use the notation which does not include a space, e.g. **eastus** rather than **US East**.
 
 1. From the Cloud Shell pane, run the following to create an instance of Network Watcher in preparation for the upcoming exercises in this lab:
@@ -120,8 +121,9 @@ The main tasks for this exercise are as follows:
    ```Bash
    az network watcher configure --resource-group NetworkWatcherRG --locations $LOCATION --enabled -o table
    ```
-      > **Note**: If you receive an error indicating there is no "NetworkWatcherRG" resource group, create a resource group from the portal named NetworkWatcherRG and rerun the command.
-      > 
+
+    > **Note**: If you receive an error indicating there is no "NetworkWatcherRG" resource group, create a resource group from the portal named NetworkWatcherRG and rerun the command.
+       
 1. From the Cloud Shell pane, run the following to create a resource group in the designated Azure region.
  
    ```Bash
@@ -222,7 +224,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **az303005a-lbruletcp80** blade, in the **Session persistence** drop-down list, select **Client IP** and then select **Save**.
 
-1. Wait for the update to complete and, from the Cloud Shell pane, re-run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer without session persistence (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
+1. Wait for the update to complete and, from the Cloud Shell pane, re-run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer with session persistence (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
    ```Bash
    for i in {1..4}; do curl <lb_IP_address>; done
@@ -357,7 +359,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Network Watcher** blade, select **Connection troubleshoot**.
 
-    > **Note**: The intention is to verify the proximity (in the networking terms) of the two Azure VMs in the same availability set.
+    > **Note**: The intention is to verify the proximity (in the networking terms) of the two Azure VMs in different zones (within different Azure datacenters).
 
 1. On the **Network Watcher \| Connection troubleshoot** blade, specify the following settings and select **Check** :
 
@@ -401,7 +403,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **az303005b-lbruletcp80** blade, in the **Session persistence** drop-down list, select **Client IP** and then select **Save**.
 
-1. Wait for the update to complete and, from the Cloud Shell pane, re-run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer without session persistence (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
+1. Wait for the update to complete and, from the Cloud Shell pane, re-run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer with session persistence (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
    ```Bash
    for i in {1..4}; do curl <lb_IP_address>; done
@@ -652,7 +654,7 @@ The main tasks for this exercise are as follows:
    ```Bash
    for (( ; ; )); do curl -s <lb_IP_address>?[1-10]; done
    ```
-1. In the Azure portal, on the **az30305c-vmss** blade, review the **CPU (average)** chart and verify that the CPU utilization of the Application Gateway increased sufficiently to trigger scaling out.
+1. In the Azure portal, on the **az30305c-vmss** Overview blade, on the Monitoring tab, review the **CPU (average)** chart and verify that the CPU utilization of the Application Gateway increased sufficiently to trigger scaling out.
 
     > **Note**: You might need to wait a few minutes.
 
@@ -703,7 +705,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Scale storage resources of Azure virtual machine scale sets instances.
 
-1. On the **az30305c-vmss** blade, select **Disks**, select **+ Add data disk**, attach a new managed disk with the following settings (leave others with their default values), and select **Save**:
+1. On the **az30305c-vmss** blade, select **Disks**, select **+ Create and attach a new disk**, attach a new managed disk with the following settings (leave others with their default values), and select **Save**:
 
     | Setting | Value | 
     | --- | --- |
