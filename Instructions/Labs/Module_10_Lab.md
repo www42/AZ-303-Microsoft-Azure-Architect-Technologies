@@ -82,7 +82,7 @@ The main tasks for this exercise are as follows:
      -rgName 'az30310a-labRG'
    ```
 
-      > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
+    >**Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
 
 1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ303\\AllFiles\Labs\\10\\azuredeploy30310rga.json**.
 
@@ -99,7 +99,7 @@ The main tasks for this exercise are as follows:
      -AsJob
    ```
 
-    > **Note**: Do not wait for the deployment to complete but instead proceed to the next task. The deployment should take less than 5 minutes.
+    >**Note**: Do not wait for the deployment to complete but instead proceed to the next task. The deployment should take less than 5 minutes.
 
 
 #### Task 2: Create an Azure Active Directory user
@@ -131,7 +131,7 @@ The main tasks for this exercise are as follows:
    (Get-AzureADUser -Filter "MailNickName eq 'az30310aaduser1'").UserPrincipalName
    ```
 
-      > **Note**: Record the user principal name of the newly created Azure AD user. You will need it later in this lab.
+    >**Note**: Record the user principal name of the newly created Azure AD user. You will need it later in this lab.
 
 1. Close the Cloud Shell pane.
 
@@ -151,7 +151,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30310a-labRG** blade, select **Access Control (IAM)**.
 
-1. On the **az30310a-labRG - Access Control (IAM)** blade, select **Roles**.
+1. On the **az30310a-labRG - Access Control (IAM)** blade, select **Roles (Classic)**.
 
 1. On the **Roles** blade, select **Owner**.
 
