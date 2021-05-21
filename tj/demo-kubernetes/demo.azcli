@@ -1,7 +1,7 @@
 # -------------------
 rg="Kubernetes-RG"
 location="westeurope"
-cluster="Jeri1"
+cluster="k8s"
 tag="KubernetesPOC"
 # -------------------
 cd tj/demo-kubernetes
