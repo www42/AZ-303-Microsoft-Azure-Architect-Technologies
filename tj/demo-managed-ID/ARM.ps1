@@ -6,7 +6,8 @@ $RgId    = "/subscriptions/$SubscriptionId/resourceGroups/$RgName"
 #
 $Uri      = "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F"
 $Header   = @{"Metadata" = "true"}
-$response = Invoke-RestMethod -Headers $Header -Method GET -Proxy $null -Uri $Uri
+
+$response = Invoke-RestMethod -Method GET -Uri $Uri -Headers $Header -Proxy $null
 $token    = $response.access_token
 
 
@@ -16,5 +17,6 @@ $token    = $response.access_token
 #
 $uri     = "https://management.azure.com$RgId/resources?api-version=2021-04-01"
 $Header  = @{"authorization" = "Bearer $token"}
-$response = Invoke-RestMethod -Method Get -Uri $uri -Headers $Header
+
+$response = Invoke-RestMethod -Method Get -Uri $Uri -Headers $Header
 $response.value
